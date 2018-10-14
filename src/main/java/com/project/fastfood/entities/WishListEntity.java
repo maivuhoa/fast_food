@@ -2,7 +2,6 @@ package com.project.fastfood.entities;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,8 +12,8 @@ public class WishListEntity {
     private Timestamp updateAt;
     private Timestamp deleteAt;
     private Integer deleteFlag;
-    private List<UsersEntity> users;
-    private List<ProductsEntity> products;
+    private UsersEntity user;
+    private ProductsEntity product;
 
     @Id
     @Column(name = "id_wish", nullable = false)
@@ -83,21 +82,23 @@ public class WishListEntity {
         return Objects.hash(idWish, createAt, updateAt, deleteAt, deleteFlag);
     }
 
-    @OneToMany(mappedBy = "wishList")
-    public List<UsersEntity> getUsers() {
-        return users;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id_user")
+    public UsersEntity getUser() {
+        return user;
     }
 
-    public void setUsers(List<UsersEntity> users) {
-        this.users = users;
+    public void setUser(UsersEntity user) {
+        this.user = user;
     }
 
-    @OneToMany(mappedBy = "wishList")
-    public List<ProductsEntity> getProducts() {
-        return products;
+    @ManyToOne
+    @JoinColumn(name = "product_id", referencedColumnName = "id_product")
+    public ProductsEntity getProduct() {
+        return product;
     }
 
-    public void setProducts(List<ProductsEntity> products) {
-        this.products = products;
+    public void setProduct(ProductsEntity product) {
+        this.product = product;
     }
 }

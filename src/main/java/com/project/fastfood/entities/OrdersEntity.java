@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "orders", schema = "food_and_drink", catalog = "")
+@Table(name = "orders", schema = "food_and_drink")
 public class OrdersEntity {
     private Integer idOrder;
     private Integer status;
@@ -21,7 +21,7 @@ public class OrdersEntity {
     private Integer deleteFlag;
     private List<OrderDetailEntity> orderDetails;
     private WardsEntity ward;
-    private UsersEntity user;
+    private UsersEntity customer;
     private UsersEntity shiper;
 
     @Id
@@ -134,29 +134,6 @@ public class OrdersEntity {
         this.deleteFlag = deleteFlag;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        OrdersEntity that = (OrdersEntity) o;
-        return Objects.equals(idOrder, that.idOrder) &&
-                Objects.equals(status, that.status) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(address, that.address) &&
-                Objects.equals(phone, that.phone) &&
-                Objects.equals(note, that.note) &&
-                Objects.equals(shipCost, that.shipCost) &&
-                Objects.equals(createAt, that.createAt) &&
-                Objects.equals(updateAt, that.updateAt) &&
-                Objects.equals(deleteAt, that.deleteAt) &&
-                Objects.equals(deleteFlag, that.deleteFlag);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idOrder, status, name, address, phone, note, shipCost, createAt, updateAt, deleteAt, deleteFlag);
-    }
-
     @OneToMany(mappedBy = "order")
     public List<OrderDetailEntity> getOrderDetails() {
         return orderDetails;
@@ -178,12 +155,12 @@ public class OrdersEntity {
 
     @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "id_user")
-    public UsersEntity getUser() {
-        return user;
+    public UsersEntity getCustomer() {
+        return customer;
     }
 
-    public void setUser(UsersEntity user) {
-        this.user = user;
+    public void setCustomer(UsersEntity customer) {
+        this.customer = customer;
     }
 
     @ManyToOne

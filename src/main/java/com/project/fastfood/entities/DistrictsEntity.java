@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "districts", schema = "food_and_drink", catalog = "")
+@Table(name = "districts", schema = "food_and_drink")
 public class DistrictsEntity {
     private String idDistrict;
     private String name;
@@ -52,22 +52,6 @@ public class DistrictsEntity {
 
     public void setLocation(String location) {
         this.location = location;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        DistrictsEntity that = (DistrictsEntity) o;
-        return Objects.equals(idDistrict, that.idDistrict) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(type, that.type) &&
-                Objects.equals(location, that.location);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idDistrict, name, type, location);
     }
 
     @ManyToOne

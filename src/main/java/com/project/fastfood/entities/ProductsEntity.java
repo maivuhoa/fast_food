@@ -20,7 +20,7 @@ public class ProductsEntity {
     private Integer deleteFlag;
     private List<OrderDetailEntity> orderDetails;
     private CategoriesEntity category;
-    private WishListEntity wishList;
+    private List<WishListEntity> wishLists;
 
     @Id
     @Column(name = "id_product", nullable = false)
@@ -163,13 +163,12 @@ public class ProductsEntity {
         this.category = category;
     }
 
-    @ManyToOne
-    @JoinTable(name = "products", catalog = "", schema = "food_and_drink", joinColumns = @JoinColumn(name = "id_product", referencedColumnName = "id_product", nullable = false), inverseJoinColumns = @JoinColumn(name = "id_product", referencedColumnName = "id_wish", nullable = false))
-    public WishListEntity getWishList() {
-        return wishList;
+    @OneToMany(mappedBy = "product")
+    public List<WishListEntity> getWishLists() {
+        return wishLists;
     }
 
-    public void setWishList(WishListEntity wishList) {
-        this.wishList = wishList;
+    public void setWishLists(List<WishListEntity> wishLists) {
+        this.wishLists = wishLists;
     }
 }

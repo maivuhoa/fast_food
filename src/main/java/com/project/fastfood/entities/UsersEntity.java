@@ -25,7 +25,7 @@ public class UsersEntity {
     private List<PostsEntity> posts;
     private WardsEntity ward;
     private RolesEntity role;
-    private WishListEntity wishList;
+    private List<WishListEntity> wishLists;
 
     @Id
     @Column(name = "id_user", nullable = false)
@@ -171,7 +171,7 @@ public class UsersEntity {
         return Objects.hash(idUser, username, password, fullname, address, phone, email, status, createAt, updateAt, deleteAt, deleteFlag);
     }
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "customer")
     public List<OrdersEntity> getCustomerOrders() {
         return customerOrders;
     }
@@ -218,13 +218,12 @@ public class UsersEntity {
         this.role = role;
     }
 
-    @ManyToOne
-    @JoinTable(name = "users", catalog = "", schema = "food_and_drink", joinColumns = @JoinColumn(name = "id_user", referencedColumnName = "id_user", nullable = false), inverseJoinColumns = @JoinColumn(name = "id_user", referencedColumnName = "id_wish", nullable = false))
-    public WishListEntity getWishList() {
-        return wishList;
+    @OneToMany(mappedBy = "user")
+    public List<WishListEntity> getWishLists() {
+        return wishLists;
     }
 
-    public void setWishList(WishListEntity wishList) {
-        this.wishList = wishList;
+    public void setWishLists(List<WishListEntity> wishLists) {
+        this.wishLists = wishLists;
     }
 }

@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "order_detail", schema = "food_and_drink", catalog = "")
+@Table(name = "order_detail", schema = "food_and_drink")
 public class OrderDetailEntity {
     private Integer idOrderDetail;
     private Double price;
@@ -85,25 +85,6 @@ public class OrderDetailEntity {
 
     public void setDeleteFlag(Integer deleteFlag) {
         this.deleteFlag = deleteFlag;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        OrderDetailEntity that = (OrderDetailEntity) o;
-        return Objects.equals(idOrderDetail, that.idOrderDetail) &&
-                Objects.equals(price, that.price) &&
-                Objects.equals(quantity, that.quantity) &&
-                Objects.equals(createAt, that.createAt) &&
-                Objects.equals(updateAt, that.updateAt) &&
-                Objects.equals(deleteAt, that.deleteAt) &&
-                Objects.equals(deleteFlag, that.deleteFlag);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idOrderDetail, price, quantity, createAt, updateAt, deleteAt, deleteFlag);
     }
 
     @ManyToOne

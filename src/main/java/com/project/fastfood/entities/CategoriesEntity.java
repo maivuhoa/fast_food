@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "categories", schema = "food_and_drink", catalog = "")
+@Table(name = "categories", schema = "food_and_drink")
 public class CategoriesEntity {
     private Integer idCategory;
     private String name;
@@ -74,24 +74,6 @@ public class CategoriesEntity {
 
     public void setDeleteFlag(Integer deleteFlag) {
         this.deleteFlag = deleteFlag;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CategoriesEntity that = (CategoriesEntity) o;
-        return Objects.equals(idCategory, that.idCategory) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(createAt, that.createAt) &&
-                Objects.equals(updateAt, that.updateAt) &&
-                Objects.equals(deleteAt, that.deleteAt) &&
-                Objects.equals(deleteFlag, that.deleteFlag);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idCategory, name, createAt, updateAt, deleteAt, deleteFlag);
     }
 
     @OneToMany(mappedBy = "category")
