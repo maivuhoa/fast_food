@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+  <!-- admin -->  
+  <definition name="public.template" template="/WEB-INF/jsp/public_pages/layouts/template.jsp">
+    <put-attribute name="header" value="/WEB-INF/jsp/public_pages/layouts/header.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/jsp/public_pages/layouts/footer.jsp" />
+    <put-attribute name="content" value="" />
+  </definition>
+  
+  <definition name="public.category.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/categories/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/categories/meta_description.jsp" />
+  </definition>
+  <definition name="public.cart.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/carts/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/carts/meta_description.jsp" />
+  </definition>
+  <definition name="public.profile.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/profile/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/profile/meta_description.jsp" />
+  </definition>
+  <definition name="public.discount.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/discount/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/discount/meta_description.jsp" />
+  </definition>
+  <definition name="public.wish_list.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/wish_list/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/wish_list/meta_description.jsp" />
+  </definition>
+  <definition name="public.about.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/about/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/about/meta_description.jsp" />
+  </definition>
+  <definition name="public.register.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/register/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/register/meta_description.jsp" />
+  </definition>
+  <definition name="public.ship_address.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/ship_address/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/ship_address/meta_description.jsp" />
+  </definition>
+</tiles-definitions>

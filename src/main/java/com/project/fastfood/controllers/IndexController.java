@@ -10,8 +10,8 @@ public class IndexController {
     @Autowired
     RolesService rolesService;
 
-    @GetMapping
+    @GetMapping("/abc")
     public String getIndex() {
-        return "index";
+        return "";
     }
 }
