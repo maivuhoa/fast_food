@@ -10,6 +10,7 @@ import java.util.Objects;
 public class CategoriesEntity {
     private Integer idCategory;
     private String name;
+    private String image;
     private Timestamp createAt;
     private Timestamp updateAt;
     private Timestamp deleteAt;
@@ -83,5 +84,15 @@ public class CategoriesEntity {
 
     public void setProducts(List<ProductsEntity> products) {
         this.products = products;
+    }
+
+    @Basic
+    @Column(name = "image", nullable = true)
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

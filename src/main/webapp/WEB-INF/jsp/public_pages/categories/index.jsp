@@ -1,4 +1,5 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <section class="sec-thuc-don clearfix">
     <div class="container wap-sec-thuc-don">
@@ -10,11 +11,13 @@
             <div class="col-md-12">
                 <div id="menu-list-thuc-don" class="menu-list-thuc-don clearfix">
                     <select id="selectpicker_menu" onclick="menuAjax(this.value)" class="selectpicker form-control">
-                        <option myid="0" value="phan-an-combo" data-content="<span class='text'><h2>Phần ăn Combo</h2></span>"  href="#tab_combo" class="tab_product"    style="text-transform: uppercase;">Phần ăn Combo</option>
-                        <option myid="1" value="ga-ran-quay" data-content="<span class='text'><h2>Gà Rán & Quay</h2></span>"   class="tab_product" href="#tab_fried-roasted-chicken">Gà Rán & Quay</option>
-                        <option myid="6" value="burger-com" data-content="<span class='text'><h2>BURGER - CƠM</h2></span>"   class="tab_product" href="#tab_burger-rice">BURGER - CƠM</option>
-                        <option myid="4" value="thuc-an-nhe" data-content="<span class='text'><h2>Thức Ăn Nhẹ</h2></span>"   class="tab_product" href="#tab_snacks">Thức Ăn Nhẹ</option>
-                        <option myid="5" value="trang-mieng-thuc-uong" data-content="<span class='text'><h2>Tráng Miệng & Thức Uống</h2></span>"   class="tab_product" href="#tab_desserts-drinks">Tráng Miệng & Thức Uống</option>
+                        <%--<c:forEach var="category" items="${categories}">--%>
+                            <option myid="0" value="phan-an-combo" data-content="<span class='text'><h2>Phần ăn Combo</h2></span>"  href="#tab_combo" class="tab_product"    style="text-transform: uppercase;">Phần ăn Combo</option>
+                            <option myid="1" value="ga-ran-quay" data-content="<span class='text'><h2>Gà Rán & Quay</h2></span>"   class="tab_product" href="#tab_fried-roasted-chicken">Gà Rán & Quay</option>
+                            <option myid="6" value="burger-com" data-content="<span class='text'><h2>BURGER - CƠM</h2></span>"   class="tab_product" href="#tab_burger-rice">BURGER - CƠM</option>
+                            <option myid="4" value="thuc-an-nhe" data-content="<span class='text'><h2>Thức Ăn Nhẹ</h2></span>"   class="tab_product" href="#tab_snacks">Thức Ăn Nhẹ</option>
+                            <option myid="5" value="trang-mieng-thuc-uong" data-content="<span class='text'><h2>Tráng Miệng & Thức Uống</h2></span>"   class="tab_product" href="#tab_desserts-drinks">Tráng Miệng & Thức Uống</option>
+                        <%--</c:forEach>--%>
                     </select>
                 </div>
                 <div class="tag">

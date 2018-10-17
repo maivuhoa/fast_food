@@ -10,10 +10,10 @@ public class Test {
     @Autowired
     RolesService rolesService;
 
-    @GetMapping("/categories")
-    public String viewCategory() {
-        return "public.category.index";
-    }
+//    @GetMapping("/categories")
+//    public String viewCategory() {
+//        return "public.category.index";
+//    }
     @GetMapping("/carts")
     public String viewCart() {
         return "public.cart.index";
