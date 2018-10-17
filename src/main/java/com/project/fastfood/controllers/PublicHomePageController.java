@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
-public class PublicHomePageController {
-    @Autowired
-    CategoriesService categoriesService;
+public class PublicHomePageController extends PublicSuperControler{
 
     @GetMapping("/index")
     public String viewHomePage(ModelMap modelMap) {
@@ -21,8 +19,4 @@ public class PublicHomePageController {
         return "public.category.index";
     }
 
-    private void responseListCategoriesToHomePage(ModelMap modelMap) {
-        List<CategoriesEntity> categories = categoriesService.findAllCategories();
-        modelMap.addAttribute("", categories);
-    }
 }

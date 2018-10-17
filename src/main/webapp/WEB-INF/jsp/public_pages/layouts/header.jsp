@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <nav class="nav-header navbar navbar-default clearfix">
@@ -168,36 +169,14 @@
             <div id="main-thucdon">
                 <a class="owlmenu-home-btn left"><i class="fa fa-angle-left"></i></a> <a class="owlmenu-home-btn right"><i class="fa fa-angle-right"></i></a>
                 <div class="owl-carousel">
-                    <div class="item">
-                        <a href="https://kfcvietnam.com.vn/vn/thuc-don/0/phan-an-combo.html">
-                            <div class="image"><img src="https://kfcvietnam.com.vn/uploads/category/combo/e71649d3cbee5cad2387d52bffd9ac4a.png" class="img-responsive center-block"></div>
-                            <div class="title">Phần ăn Combo</div>
-                        </a>
-                    </div>
-                    <div class="item" >
-                        <a href="https://kfcvietnam.com.vn/vn/thuc-don/1/ga-ran-quay.html">
-                            <div class="image"><img src="https://kfcvietnam.com.vn/uploads/category/c4b40a0d1cc36a0668d7debd0416343e.png" class="img-responsive center-block"></div>
-                            <div class="title">Gà Rán & Quay</div>
-                        </a>
-                    </div>
-                    <div class="item" >
-                        <a href="htỰC tps://kfcvietnam.com.vn/vn/thuc-don/6/burger-com.html">
-                            <div class="image"><img src="https://kfcvietnam.com.vn/uploads/category/4485217a02b1ad30ace85c499809683b.png" class="img-responsive center-block"></div>
-                            <div class="title">BURGER - CƠM</div>
-                        </a>
-                    </div>
-                    <div class="item" >
-                        <a href="https://kfcvietnam.com.vn/vn/thuc-don/4/thuc-an-nhe.html">
-                            <div class="image"><img src="https://kfcvietnam.com.vn/uploads/category/a17628bd73c28ac62e661b5bfc4d0829.png" class="img-responsive center-block"></div>
-                            <div class="title">Thức Ăn Nhẹ</div>
-                        </a>
-                    </div>
-                    <div class="item" >
-                        <a href="https://kfcvietnam.com.vn/vn/thuc-don/5/trang-mieng-thuc-uong.html">
-                            <div class="image"><img src="https://kfcvietnam.com.vn/uploads/category/97c544772c5bb38c2627975e041d55a4.png" class="img-responsive center-block"></div>
-                            <div class="title">Tráng Miệng & Thức Uống</div>
-                        </a>
-                    </div>
+                    <c:forEach var="cat" items="${categories}">
+                        <div class="item">
+                            <a href="https://kfcvietnam.com.vn/vn/thuc-don/0/phan-an-combo.html">
+                                <div class="image"><img src="${cat.getImage()}" class="img-responsive center-block"></div>
+                                <div class="title">${cat.getName()}</div>
+                            </a>
+                        </div>
+                    </c:forEach>
                 </div>
             </div>
         </div>
