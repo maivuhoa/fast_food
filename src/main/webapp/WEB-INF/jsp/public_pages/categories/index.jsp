@@ -38,7 +38,7 @@
                                     <div class="col-sm-4 col-xs-6 call-combo" data-id="24">
                                         <div class="item">
                                             <a href="javascript:void(0);" onclick="call_combo(24);" >
-                                                <div class="image clearfix"><img src="${product.getImage()}" class="img-responsive center-block"></div>
+                                                <div class="image clearfix"><img src="/public/public_pages/uploads/product/${product.getImage()}" class="img-responsive center-block"></div>
                                                 <div class="title clearfix">
                                                     <h4>${product.getName()}</h4>
                                                 </div>

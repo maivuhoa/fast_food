@@ -22,10 +22,10 @@ public class Test {
     public String viewProfile() {
         return "public.profile.index";
     }
-    @GetMapping("/discount")
-    public String viewDiscount() {
-        return "public.discount.index";
-    }
+//    @GetMapping("/discount")
+//    public String viewDiscount() {
+//        return "public.discount.index";
+//    }
     @GetMapping("/wish-list")
     public String viewWishList() {
         return "public.wish_list.index";

@@ -27,6 +27,10 @@
     <put-attribute name="content" value="/WEB-INF/jsp/public_pages/discount/index.jsp" />
     <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/discount/meta_description.jsp" />
   </definition>
+  <definition name="public.discount.detail" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/discount/detail.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/discount/meta_description.jsp" />
+  </definition>
   <definition name="public.wish_list.index" extends="public.template">
     <put-attribute name="content" value="/WEB-INF/jsp/public_pages/wish_list/index.jsp" />
     <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/wish_list/meta_description.jsp" />

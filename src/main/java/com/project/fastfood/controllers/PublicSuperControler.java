@@ -2,6 +2,7 @@ package com.project.fastfood.controllers;
 
 import com.project.fastfood.entities.CategoriesEntity;
 import com.project.fastfood.services.CategoriesService;
+import com.project.fastfood.services.PostsService;
 import com.project.fastfood.services.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
@@ -14,6 +15,8 @@ public class PublicSuperControler {
     CategoriesService categoriesService;
     @Autowired
     ProductsService productsService;
+    @Autowired
+    PostsService postsService;
 
     @ModelAttribute
     protected void responseListCategoriesToHomePage(ModelMap modelMap) {

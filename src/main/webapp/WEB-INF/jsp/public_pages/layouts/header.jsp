@@ -1,6 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <nav class="nav-header navbar navbar-default clearfix">
     <div class="container clearfix">
         <div class="navbar-top clearfix">
@@ -107,14 +110,14 @@
                 <nav id="navbar_mobile" class="navbar_mobile">
                     <a class="btn-close-menu"></a>
                     <ul class="nav navbar-nav">
-                        <li class="item" id=""><a href="https://kfcvietnam.com.vn/vn">Trang chủ</a></li>
-                        <li class="item" id=""><a href="https://kfcvietnam.com.vn/vn/gioi-thieu.html">Giới thiệu</a></li>
-                        <li class="item" id=""><a rel="popup-thuc-don" href="https://kfcvietnam.com.vn/vn/thuc-don/0/phan-an-combo.html">Thực đơn</a></li>
-                        <li class="item" id=""><a href="https://kfcvietnam.com.vn/vn/khuyen-mai.html">Khuyến mãi</a></li>
-                        <li class="item" id=""><a href="https://kfcvietnam.com.vn/vn/nghe-nghiep.html">Nghề nghiệp</a></li>
-                        <li class="item" id=""><a href="https://kfcvietnam.com.vn/vn/thu-vien-anh.html">Thư viện ảnh</a></li>
-                        <li class="item" id=""><a href="https://kfcvietnam.com.vn/vn/thanh-vien/thong-tin-tai-khoan.html">Thành viên</a></li>
-                        <li class="item" id=""><a href="https://kfcvietnam.com.vn/vn/nha-hang.html">Nhà hàng</a></li>
+                        <li class="item"><a href="https://kfcvietnam.com.vn/vn">Trang chủ</a></li>
+                        <li class="item"><a href="https://kfcvietnam.com.vn/vn/gioi-thieu.html">Giới thiệu</a></li>
+                        <li class="item"><a rel="popup-thuc-don" href="/index/${categories.get(0).getIdCategory()}">Thực đơn</a></li>
+                        <li class="item"><a href="/discount">Khuyến mãi</a></li>
+                        <li class="item"><a href="https://kfcvietnam.com.vn/vn/nghe-nghiep.html">Nghề nghiệp</a></li>
+                        <li class="item"><a href="https://kfcvietnam.com.vn/vn/thu-vien-anh.html">Thư viện ảnh</a></li>
+                        <li class="item"><a href="https://kfcvietnam.com.vn/vn/thanh-vien/thong-tin-tai-khoan.html">Thành viên</a></li>
+                        <li class="item"><a href="https://kfcvietnam.com.vn/vn/nha-hang.html">Nhà hàng</a></li>
                     </ul>
                     <div class="app-store-mobile">
                         <p>Tải ứng dụng KFC Vietnam để mua hàng được nhiều ưu đãi</p>
@@ -153,9 +156,9 @@
                 <a class="owlmenu-btn left"><i class="fa fa-angle-left"></i></a> <a class="owlmenu-btn right"><i class="fa fa-angle-right"></i></a>
                 <div class="owl-carousel">
                     <div class="item" id="menu_gioithieu"><a href="https://kfcvietnam.com.vn/vn/gioi-thieu.html">Giới thiệu</a></div>
-                    <div class="item" id="menu_thucdon"><a rel="popup-thuc-don" href="https://kfcvietnam.com.vn/vn/thuc-don/0/phan-an-combo.html">Thực đơn</a></div>
+                    <div class="item" id="menu_thucdon"><a rel="popup-thuc-don" href="/index/${categories.get(0).getIdCategory()}">Thực đơn</a></div>
                     <div class="item" id="menu_nhahang"><a href="https://kfcvietnam.com.vn/vn/nha-hang.html">Nhà hàng</a></div>
-                    <div class="item" id="menu_khuyenmai"><a href="https://kfcvietnam.com.vn/vn/khuyen-mai.html">Khuyến mãi</a></div>
+                    <div class="item" id="menu_khuyenmai"><a href="/discount">Khuyến mãi</a></div>
                     <div class="item" id="menu_nghenghiep"><a href="https://kfcvietnam.com.vn/vn/nghe-nghiep.html">Nghề nghiệp</a></div>
                     <div class="item" id="menu_thuvienanh"><a href="https://kfcvietnam.com.vn/vn/thu-vien-anh.html">Thư viện ảnh</a></div>
                     <div class="item" id="menu_thanhvien"><a href="https://kfcvietnam.com.vn/vn/thanh-vien/thong-tin-tai-khoan.html">Thành viên</a></div>
@@ -172,7 +175,7 @@
                     <c:forEach var="cat" items="${categories}">
                         <div class="item">
                             <a href="/index/${cat.getIdCategory()}">
-                                <div class="image"><img src="${cat.getImage()}" class="img-responsive center-block"></div>
+                                <div class="image"><img src="/public/public_pages/uploads/category/${cat.getImage()}" class="img-responsive center-block"></div>
                                 <div class="title">${cat.getName()}</div>
                             </a>
                         </div>
