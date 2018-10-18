@@ -322,6 +322,7 @@
         });
     })
 </script>
+
 <!-- Google-->
 <script src="/public/public_pages/templates/js/message/vn/message.js?v=1.2.5"></script>
 <script src="/public/public_pages/templates/js/script.js?v=1.2.5"></script>

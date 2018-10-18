@@ -171,7 +171,7 @@
                 <div class="owl-carousel">
                     <c:forEach var="cat" items="${categories}">
                         <div class="item">
-                            <a href="https://kfcvietnam.com.vn/vn/thuc-don/0/phan-an-combo.html">
+                            <a href="/index/${cat.getIdCategory()}">
                                 <div class="image"><img src="${cat.getImage()}" class="img-responsive center-block"></div>
                                 <div class="title">${cat.getName()}</div>
                             </a>
