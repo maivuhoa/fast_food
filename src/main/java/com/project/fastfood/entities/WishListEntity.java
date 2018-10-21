@@ -65,24 +65,7 @@ public class WishListEntity {
         this.deleteFlag = deleteFlag;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        WishListEntity that = (WishListEntity) o;
-        return Objects.equals(idWish, that.idWish) &&
-                Objects.equals(createAt, that.createAt) &&
-                Objects.equals(updateAt, that.updateAt) &&
-                Objects.equals(deleteAt, that.deleteAt) &&
-                Objects.equals(deleteFlag, that.deleteFlag);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idWish, createAt, updateAt, deleteAt, deleteFlag);
-    }
-
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id_user")
     public UsersEntity getUser() {
         return user;
@@ -92,7 +75,7 @@ public class WishListEntity {
         this.user = user;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", referencedColumnName = "id_product")
     public ProductsEntity getProduct() {
         return product;

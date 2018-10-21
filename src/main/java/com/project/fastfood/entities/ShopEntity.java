@@ -84,22 +84,4 @@ public class ShopEntity {
         this.logo = logo;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ShopEntity that = (ShopEntity) o;
-        return Objects.equals(idShop, that.idShop) &&
-                Objects.equals(address, that.address) &&
-                Objects.equals(phone, that.phone) &&
-                Objects.equals(email, that.email) &&
-                Objects.equals(description, that.description) &&
-                Objects.equals(averageShopCost, that.averageShopCost) &&
-                Objects.equals(logo, that.logo);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idShop, address, phone, email, description, averageShopCost, logo);
-    }
 }

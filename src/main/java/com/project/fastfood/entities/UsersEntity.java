@@ -147,31 +147,7 @@ public class UsersEntity {
         this.deleteFlag = deleteFlag;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UsersEntity that = (UsersEntity) o;
-        return Objects.equals(idUser, that.idUser) &&
-                Objects.equals(username, that.username) &&
-                Objects.equals(password, that.password) &&
-                Objects.equals(fullname, that.fullname) &&
-                Objects.equals(address, that.address) &&
-                Objects.equals(phone, that.phone) &&
-                Objects.equals(email, that.email) &&
-                Objects.equals(status, that.status) &&
-                Objects.equals(createAt, that.createAt) &&
-                Objects.equals(updateAt, that.updateAt) &&
-                Objects.equals(deleteAt, that.deleteAt) &&
-                Objects.equals(deleteFlag, that.deleteFlag);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idUser, username, password, fullname, address, phone, email, status, createAt, updateAt, deleteAt, deleteFlag);
-    }
-
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     public List<OrdersEntity> getCustomerOrders() {
         return customerOrders;
     }
@@ -180,7 +156,7 @@ public class UsersEntity {
         this.customerOrders = customerOrders;
     }
 
-    @OneToMany(mappedBy = "shiper")
+    @OneToMany(mappedBy = "shiper", fetch = FetchType.LAZY)
     public List<OrdersEntity> getShiperOrders() {
         return shiperOrders;
     }
@@ -189,7 +165,7 @@ public class UsersEntity {
         this.shiperOrders = shiperOrders;
     }
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     public List<PostsEntity> getPosts() {
         return posts;
     }
@@ -198,7 +174,7 @@ public class UsersEntity {
         this.posts = posts;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ward_id", referencedColumnName = "id_ward")
     public WardsEntity getWard() {
         return ward;
@@ -208,7 +184,7 @@ public class UsersEntity {
         this.ward = ward;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id", referencedColumnName = "id_role")
     public RolesEntity getRole() {
         return role;
@@ -218,7 +194,7 @@ public class UsersEntity {
         this.role = role;
     }
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     public List<WishListEntity> getWishLists() {
         return wishLists;
     }

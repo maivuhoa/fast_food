@@ -1,12 +1,17 @@
 package com.project.fastfood.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
 @Table(name = "products", schema = "food_and_drink", catalog = "")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class ProductsEntity {
     private Integer idProduct;
     private String name;
@@ -21,8 +26,11 @@ public class ProductsEntity {
     private List<OrderDetailEntity> orderDetails;
     private CategoriesEntity category;
     private List<WishListEntity> wishLists;
+    private List<ComboEntity> combo;
+    private List<ComboEntity> elementOfProductCombos;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_product", nullable = false)
     public Integer getIdProduct() {
         return idProduct;
@@ -122,29 +130,7 @@ public class ProductsEntity {
         this.deleteFlag = deleteFlag;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ProductsEntity that = (ProductsEntity) o;
-        return Objects.equals(idProduct, that.idProduct) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(description, that.description) &&
-                Objects.equals(image, that.image) &&
-                Objects.equals(price, that.price) &&
-                Objects.equals(type, that.type) &&
-                Objects.equals(createAt, that.createAt) &&
-                Objects.equals(updateAt, that.updateAt) &&
-                Objects.equals(deleteAt, that.deleteAt) &&
-                Objects.equals(deleteFlag, that.deleteFlag);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idProduct, name, description, image, price, type, createAt, updateAt, deleteAt, deleteFlag);
-    }
-
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     public List<OrderDetailEntity> getOrderDetails() {
         return orderDetails;
     }
@@ -153,7 +139,8 @@ public class ProductsEntity {
         this.orderDetails = orderDetails;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     @JoinColumn(name = "category_id", referencedColumnName = "id_category")
     public CategoriesEntity getCategory() {
         return category;
@@ -163,12 +150,37 @@ public class ProductsEntity {
         this.category = category;
     }
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     public List<WishListEntity> getWishLists() {
         return wishLists;
     }
 
     public void setWishLists(List<WishListEntity> wishLists) {
         this.wishLists = wishLists;
+    }
+
+    @OneToMany(mappedBy = "parentProduct", fetch = FetchType.LAZY)
+    @JsonIgnore
+    public List<ComboEntity> getCombo() {
+        return combo;
+    }
+
+    public void setCombo(List<ComboEntity> combo) {
+        this.combo = combo;
+    }
+
+    @OneToMany(mappedBy = "childProduct", fetch = FetchType.LAZY)
+    @JsonIgnore
+    public List<ComboEntity> getElementOfProductCombos() {
+        return elementOfProductCombos;
+    }
+
+    public void setElementOfProductCombos(List<ComboEntity> elementOfProductCombos) {
+        this.elementOfProductCombos = elementOfProductCombos;
+    }
+
+    @Override
+    public String toString() {
+        return idProduct + "|" + name + "|" + price + "|" + image + "|" + type;
     }
 }

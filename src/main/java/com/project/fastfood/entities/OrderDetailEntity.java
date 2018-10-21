@@ -87,7 +87,7 @@ public class OrderDetailEntity {
         this.deleteFlag = deleteFlag;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id", referencedColumnName = "id_order")
     public OrdersEntity getOrder() {
         return order;
@@ -97,7 +97,7 @@ public class OrderDetailEntity {
         this.order = order;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", referencedColumnName = "id_product")
     public ProductsEntity getProduct() {
         return product;

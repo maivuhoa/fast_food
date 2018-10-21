@@ -77,7 +77,7 @@ public class CategoriesEntity {
         this.deleteFlag = deleteFlag;
     }
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     public List<ProductsEntity> getProducts() {
         return products;
     }

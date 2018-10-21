@@ -12,4 +12,6 @@ import java.util.List;
 @Repository
 public interface ProductsRepository extends JpaRepository<ProductsEntity, Integer> {
     Page<ProductsEntity> findAllByCategory_IdCategory(int category_id, Pageable pageable);
+
+    ProductsEntity findByIdProductAndTypeEquals(int id, boolean isCombo);
 }

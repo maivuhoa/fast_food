@@ -59,6 +59,7 @@
     gtag('js', new Date());
     gtag('config', 'UA-43944041-1');
 </script>
+
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -129,6 +130,7 @@
 <div id="popup-product-cart" class="popup popup-sp clearfix" style="display:none;">&nbsp;</div>
 <script>
     $(document).ready(function(){
+
         $('#menu_thucdon').addClass('active');
         $("#selectpicker_menu" ).change(function() {
             var element = $("option:selected", this);

@@ -28,4 +28,8 @@ public class ProductsService {
         }
         return products;
     }
+
+    public ProductsEntity demo(int id, boolean isCombo) {
+        return productsRepository.findByIdProductAndTypeEquals(id, isCombo);
+    }
 }

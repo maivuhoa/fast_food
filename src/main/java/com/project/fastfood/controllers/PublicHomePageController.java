@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -25,5 +26,12 @@ public class PublicHomePageController extends PublicSuperControler {
 
     private void responseCategoryIdSelected(int categoryId, ModelMap modelMap) {
         modelMap.addAttribute("categorySelected", categoryId);
+    }
+
+    @PostMapping(value = "/combo/{id}", consumes = "application/json", produces = "application/json")
+    public @ResponseBody
+    ArrayList<ProductsEntity> responseProductsOfCombo(@PathVariable("id") int id){
+        int size = comboService.findAllProductOfComboByIdCombo(id).size();
+        return comboService.findAllProductOfComboByIdCombo(id);
     }
 }

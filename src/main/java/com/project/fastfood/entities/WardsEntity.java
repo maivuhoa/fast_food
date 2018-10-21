@@ -55,23 +55,7 @@ public class WardsEntity {
         this.location = location;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        WardsEntity that = (WardsEntity) o;
-        return Objects.equals(idWard, that.idWard) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(type, that.type) &&
-                Objects.equals(location, that.location);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idWard, name, type, location);
-    }
-
-    @OneToMany(mappedBy = "ward")
+    @OneToMany(mappedBy = "ward", fetch = FetchType.LAZY)
     public List<OrdersEntity> getOrders() {
         return orders;
     }
@@ -80,7 +64,7 @@ public class WardsEntity {
         this.orders = orders;
     }
 
-    @OneToMany(mappedBy = "ward")
+    @OneToMany(mappedBy = "ward", fetch = FetchType.LAZY)
     public List<UsersEntity> getUsers() {
         return users;
     }
@@ -89,7 +73,7 @@ public class WardsEntity {
         this.users = users;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "district_id", referencedColumnName = "id_district", nullable = false)
     public DistrictsEntity getDistrict() {
         return district;

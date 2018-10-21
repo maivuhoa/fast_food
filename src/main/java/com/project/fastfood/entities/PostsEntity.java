@@ -12,6 +12,7 @@ public class PostsEntity {
     private String description;
     private String content;
     private String image;
+    private Boolean type;
     private Timestamp createAt;
     private Timestamp updateAt;
     private Timestamp deleteAt;
@@ -104,32 +105,21 @@ public class PostsEntity {
         return deleteFlag;
     }
 
+    @Basic
+    @Column(name = "type", nullable = true)
+    public Boolean getType() {
+        return type;
+    }
+
+    public void setType(Boolean type) {
+        this.type = type;
+    }
+
     public void setDeleteFlag(Integer deleteFlag) {
         this.deleteFlag = deleteFlag;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PostsEntity that = (PostsEntity) o;
-        return Objects.equals(idPost, that.idPost) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(description, that.description) &&
-                Objects.equals(content, that.content) &&
-                Objects.equals(image, that.image) &&
-                Objects.equals(createAt, that.createAt) &&
-                Objects.equals(updateAt, that.updateAt) &&
-                Objects.equals(deleteAt, that.deleteAt) &&
-                Objects.equals(deleteFlag, that.deleteFlag);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idPost, name, description, content, image, createAt, updateAt, deleteAt, deleteFlag);
-    }
-
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id_user")
     public UsersEntity getUser() {
         return user;

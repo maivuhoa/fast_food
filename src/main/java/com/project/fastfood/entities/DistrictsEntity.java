@@ -54,7 +54,7 @@ public class DistrictsEntity {
         this.location = location;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "province_id", referencedColumnName = "id_province", nullable = false)
     public ProvincesEntity getProvince() {
         return province;
@@ -64,7 +64,7 @@ public class DistrictsEntity {
         this.province = province;
     }
 
-    @OneToMany(mappedBy = "district")
+    @OneToMany(mappedBy = "district", fetch = FetchType.LAZY)
     public List<WardsEntity> getWards() {
         return wards;
     }

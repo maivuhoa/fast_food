@@ -31,21 +31,7 @@ public class RolesEntity {
         this.name = name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        RolesEntity that = (RolesEntity) o;
-        return Objects.equals(idRole, that.idRole) &&
-                Objects.equals(name, that.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idRole, name);
-    }
-
-    @OneToMany(mappedBy = "role")
+    @OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
     public List<UsersEntity> getUsers() {
         return users;
     }

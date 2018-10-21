@@ -42,22 +42,7 @@ public class ProvincesEntity {
         this.type = type;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ProvincesEntity that = (ProvincesEntity) o;
-        return Objects.equals(idProvince, that.idProvince) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(type, that.type);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idProvince, name, type);
-    }
-
-    @OneToMany(mappedBy = "province")
+    @OneToMany(mappedBy = "province", fetch = FetchType.LAZY)
     public List<DistrictsEntity> getDistricts() {
         return districts;
     }

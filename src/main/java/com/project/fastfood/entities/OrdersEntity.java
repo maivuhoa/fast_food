@@ -134,7 +134,7 @@ public class OrdersEntity {
         this.deleteFlag = deleteFlag;
     }
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
     public List<OrderDetailEntity> getOrderDetails() {
         return orderDetails;
     }
@@ -143,7 +143,7 @@ public class OrdersEntity {
         this.orderDetails = orderDetails;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ward_id", referencedColumnName = "id_ward")
     public WardsEntity getWard() {
         return ward;
@@ -153,7 +153,7 @@ public class OrdersEntity {
         this.ward = ward;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", referencedColumnName = "id_user")
     public UsersEntity getCustomer() {
         return customer;
@@ -163,7 +163,7 @@ public class OrdersEntity {
         this.customer = customer;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "shiper_id", referencedColumnName = "id_user")
     public UsersEntity getShiper() {
         return shiper;
