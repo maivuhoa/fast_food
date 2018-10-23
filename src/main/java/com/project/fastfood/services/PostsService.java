@@ -33,4 +33,8 @@ public class PostsService {
         }
         return posts;
     }
+
+    public List<PostsEntity> findAllByType(Integer type) {
+        return postsRepository.findAllByType(type);
+    }
 }
