@@ -12,7 +12,7 @@ public class PostsEntity {
     private String description;
     private String content;
     private String image;
-    private Boolean type;
+    private Integer type;
     private Timestamp createAt;
     private Timestamp updateAt;
     private Timestamp deleteAt;
@@ -107,11 +107,11 @@ public class PostsEntity {
 
     @Basic
     @Column(name = "type", nullable = true)
-    public Boolean getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(Boolean type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 

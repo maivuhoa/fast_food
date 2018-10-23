@@ -47,4 +47,8 @@
     <put-attribute name="content" value="/WEB-INF/jsp/public_pages/ship_address/index.jsp" />
     <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/ship_address/meta_description.jsp" />
   </definition>
+  <definition name="public.recruitment.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/recruitment/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/recruitment/meta_description.jsp" />
+  </definition>
 </tiles-definitions>
