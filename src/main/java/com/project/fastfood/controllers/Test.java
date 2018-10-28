@@ -18,10 +18,10 @@ public class Test {
     public String viewCart() {
         return "public.cart.index";
     }
-    @GetMapping("/profile")
-    public String viewProfile() {
-        return "public.profile.index";
-    }
+//    @GetMapping("/profile")
+//    public String viewProfile() {
+//        return "public.profile.index";
+//    }
 //    @GetMapping("/discount")
 //    public String viewDiscount() {
 //        return "public.discount.index";
@@ -30,10 +30,10 @@ public class Test {
     public String viewWishList() {
         return "public.wish_list.index";
     }
-    @GetMapping("/about")
-    public String viewAbout() {
-        return "public.about.index";
-    }
+//    @GetMapping("/about")
+//    public String viewAbout() {
+//        return "public.about.index";
+//    }
     @GetMapping("/register")
     public String viewRegister() {
         return "public.register.index";

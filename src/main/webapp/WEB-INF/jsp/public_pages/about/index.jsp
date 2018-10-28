@@ -7,19 +7,6 @@
             <div class="title"><h1>Giới thiệu</h1></div>
         </div>
         <section class="gioi-thieu clearfix">
-            <div class="container wap-sec-gioi-thieu">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="menu-list-thuc-don" class="menu-list-thuc-don clearfix">
-                            <select class="selectpicker form-control" onchange="gotoLink_ajax(this.value)" id="menu_about_ajax">
-                                <option data-link="gioi-thieu" data-content="<span class='text'><h2>KFC Việt Nam</h2></span>" value="gioithieu_ajax">KFC Việt Nam</option>
-                                <option data-link="tin-tuc" data-content="<span class='text'><h2>Tin tức</h2></span>"  value="tintuc_ajax" >Tin tức</option>
-                                <option data-link="lich-su-hinh-thanh" data-content="<span class='text'><h2>Lịch sử hình thành</h2></span>"  value="lichsuhinhthanh_ajax" >Lịch sử hình thành</option>
-                                <option data-link="tap-doan-yum" data-content="<span class='text'><h2>Tập đoàn YUM</h2></span>"  value="tapdoanyum_ajax" >Tập đoàn YUM</option>
-                            </select>            </div>
-                    </div>
-                </div>
-            </div>
             <div id="tab-wap" class="tab-content">
                 <div id="tab1" class="tab-pane fade active in">
                     <div class="container wap-sec-gioi-thieu-block">
