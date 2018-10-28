@@ -126,10 +126,7 @@ var product = {
             }
         })
     },
-    add_to_cart:function(id,is_mobile){
-        if(!is_mobile){
-            is_mobile = false;
-        }
+    add_to_cart:function(id){
         var quantity = jQuery(".quantity").val();
         var price = jQuery(".price_value").val();
         var type = jQuery(".type").val();

@@ -135,10 +135,11 @@
                 <img src="/public/public_pages/templates/images/logo-kfc-new.png" class="logo-text-mobile img-responsive" style="display: none"/>
             </a>
             <div class="cartbox clearfix" id="cart_box" >
-                <a href="https://kfcvietnam.com.vn/vn/gio-hang.html">
+                <a href="/cart">
                     <i class="fa fa-shopping-cart"></i>
                     <span id="cart_number">
-                        0          </span>
+                        ${sessionScope.cart.getQuantityTotal()}
+                    </span>
                     <span class="text-cart"> Giỏ hàng</span>
                     <i class="fa fa-caret-down"></i>
                 </a>

@@ -1,11 +1,13 @@
 package com.project.fastfood.controllers;
 
+import com.project.fastfood.entities.Cart;
 import com.project.fastfood.entities.ProductsEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
