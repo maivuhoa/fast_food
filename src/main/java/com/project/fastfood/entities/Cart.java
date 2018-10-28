@@ -79,7 +79,7 @@ public class Cart {
         }
     }
 
-    public void upDateCart(int product_id, int quantity) {
+    public void updateCart(int product_id, int quantity) {
         Item item = this.getItemById(product_id);
         if (item != null) {
             if (quantity <= 0) {
@@ -91,8 +91,8 @@ public class Cart {
         }
     }
 
-    public void removeProduct(ProductsEntity product) {
-        Item item = this.getItemById(product.getIdProduct());
+    public void removeProduct(int id) {
+        Item item = this.getItemById(id);
         if (item != null) {
             this.cartItems.remove(item);
         }

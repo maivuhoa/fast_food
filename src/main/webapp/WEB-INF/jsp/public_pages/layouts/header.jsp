@@ -110,14 +110,10 @@
                 <nav id="navbar_mobile" class="navbar_mobile">
                     <a class="btn-close-menu"></a>
                     <ul class="nav navbar-nav">
-                        <li class="item"><a href="https://kfcvietnam.com.vn/vn">Trang chủ</a></li>
-                        <li class="item"><a href="https://kfcvietnam.com.vn/vn/gioi-thieu.html">Giới thiệu</a></li>
+                        <li class="item"><a href="/about">Giới thiệu</a></li>
                         <li class="item"><a rel="popup-thuc-don" href="/index/${categories.get(0).getIdCategory()}">Thực đơn</a></li>
                         <li class="item"><a href="/discount">Khuyến mãi</a></li>
-                        <li class="item"><a href="https://kfcvietnam.com.vn/vn/nghe-nghiep.html">Nghề nghiệp</a></li>
-                        <li class="item"><a href="https://kfcvietnam.com.vn/vn/thu-vien-anh.html">Thư viện ảnh</a></li>
-                        <li class="item"><a href="https://kfcvietnam.com.vn/vn/thanh-vien/thong-tin-tai-khoan.html">Thành viên</a></li>
-                        <li class="item"><a href="https://kfcvietnam.com.vn/vn/nha-hang.html">Nhà hàng</a></li>
+                        <li class="item"><a href="/recruitment">Nghề nghiệp</a></li>
                     </ul>
                     <div class="app-store-mobile">
                         <p>Tải ứng dụng KFC Vietnam để mua hàng được nhiều ưu đãi</p>
@@ -154,15 +150,11 @@
         <div class="clearfix"></div>
         <div id="navbar" class="navbar-collapse clearfix">
             <div id="mainmenu" class="clearfix">
-                <a class="owlmenu-btn left"><i class="fa fa-angle-left"></i></a> <a class="owlmenu-btn right"><i class="fa fa-angle-right"></i></a>
                 <div class="owl-carousel">
-                    <div class="item" id="menu_gioithieu"><a href="https://kfcvietnam.com.vn/vn/gioi-thieu.html">Giới thiệu</a></div>
+                    <div class="item" id="menu_gioithieu"><a href="/about">Giới thiệu</a></div>
                     <div class="item" id="menu_thucdon"><a rel="popup-thuc-don" href="/index/${categories.get(0).getIdCategory()}">Thực đơn</a></div>
-                    <div class="item" id="menu_nhahang"><a href="https://kfcvietnam.com.vn/vn/nha-hang.html">Nhà hàng</a></div>
                     <div class="item" id="menu_khuyenmai"><a href="/discount">Khuyến mãi</a></div>
-                    <div class="item" id="menu_nghenghiep"><a href="https://kfcvietnam.com.vn/vn/nghe-nghiep.html">Nghề nghiệp</a></div>
-                    <div class="item" id="menu_thuvienanh"><a href="https://kfcvietnam.com.vn/vn/thu-vien-anh.html">Thư viện ảnh</a></div>
-                    <div class="item" id="menu_thanhvien"><a href="https://kfcvietnam.com.vn/vn/thanh-vien/thong-tin-tai-khoan.html">Thành viên</a></div>
+                    <div class="item" id="menu_nghenghiep"><a href="/recruitment">Nghề nghiệp</a></div>
                 </div>
             </div>
         </div>

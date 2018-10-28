@@ -103,8 +103,6 @@
                                             },
                                             quantity: quantity,
                                         }
-
-                                        // DO POST
                                         $.ajax({
                                             type: "POST",
                                             contentType: "application/json",

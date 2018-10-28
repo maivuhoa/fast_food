@@ -59,26 +59,14 @@
                                         <div class="row">
                                             <div class="label col-md-4 col-xs-4">Giới tính:</div>
                                             <div class="input col-md-8 col-xs-8">
-                                                <div class="form-group">
-                                                    <div class="row">
-                                                        <div class="col-sm-4 col-xs-6">
-                                                            <div class="radio chapnhan gioitinh">
-                                                                <label>
-                                                                    <input type="radio" value="1" name="gender" />
-                                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
-                                                                    Nam                                                            </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4 col-xs-6">
-                                                            <div class="radio chapnhan gioitinh">
-                                                                <label>
-                                                                    <input type="radio" value="0" name="gender" checked="true"/>
-                                                                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
-                                                                    Nữ                                                            </label>
-                                                            </div>
-                                                        </div>
+                                                    <div class="radio">
+                                                        <input type="radio" name="optradio" checked>
+                                                        <label style="margin-left: 15px">Option 1</label>
                                                     </div>
-                                                </div>
+                                                    <div class="radio">
+                                                        <input type="radio" name="optradio">
+                                                        <label style="margin-left: 15px">Option 2</label>
+                                                    </div>
                                             </div>
                                         </div>
                                         <div class="row">

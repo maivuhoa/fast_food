@@ -405,7 +405,6 @@ var product = {
         var point = $("#cart_total_point").data('point');
         jQuery("#cart_total_price").html(product.call_price(total));
         jQuery("#cart_total_point").html(product.call_point(total,score,point));
-        
     },
     place_order:function(){
         jQuery.ajax({
