@@ -15,6 +15,26 @@
     <put-attribute name="content" value="/WEB-INF/jsp/public_pages/categories/index.jsp" />
     <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/categories/meta_description.jsp" />
   </definition>
+
+  <definition name="public.payment.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/payment/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/payment/meta_description.jsp" />
+  </definition>
+
+  <definition name="public.about.demo" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/about/demo.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/about/meta_description.jsp" />
+  </definition>
+
+  <definition name="public.checkout.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/checkout/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/checkout/meta_description.jsp" />
+  </definition>
+  <definition name="public.orders.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/orders/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/orders/meta_description.jsp" />
+  </definition>
+
   <definition name="public.cart.index" extends="public.template">
     <put-attribute name="content" value="/WEB-INF/jsp/public_pages/carts/index.jsp" />
     <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/carts/meta_description.jsp" />

@@ -1,11 +1,15 @@
 package com.project.fastfood.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
 @Table(name = "provinces", schema = "food_and_drink", catalog = "")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class ProvincesEntity {
     private String idProvince;
     private String name;
@@ -43,6 +47,7 @@ public class ProvincesEntity {
     }
 
     @OneToMany(mappedBy = "province", fetch = FetchType.LAZY)
+    @JsonIgnore
     public List<DistrictsEntity> getDistricts() {
         return districts;
     }

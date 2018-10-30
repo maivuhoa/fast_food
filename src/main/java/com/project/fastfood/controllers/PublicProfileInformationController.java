@@ -1,5 +1,6 @@
 package com.project.fastfood.controllers;
 
+import com.project.fastfood.entities.DistrictsEntity;
 import com.project.fastfood.entities.PostsEntity;
 import com.project.fastfood.entities.ShopEntity;
 import org.springframework.stereotype.Controller;
@@ -13,11 +14,8 @@ import java.util.List;
 public class PublicProfileInformationController extends PublicSuperControler{
     @GetMapping("/profile")
     public String responseListPosts(HttpServletRequest request, ModelMap modelMap) {
-
         return "public.profile.index";
     }
-
-
 
 //    private void responseShopEntity(ModelMap modelMap) {
 //        ShopEntity shopEntity = shopService.findShop();

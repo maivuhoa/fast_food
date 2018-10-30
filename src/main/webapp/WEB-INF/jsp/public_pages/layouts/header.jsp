@@ -10,32 +10,6 @@
             <div class="navbar-top-wap">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-xs-5 locationbox locationbox-mobile">
-                            <select  class="form-control selectpicker" onchange="changeLocation(this.value)" id="current_location" data-style="btn btn-location">
-                                <option value="0">Chọn Tỉnh/Thành Phố</option>
-                                <option data-name="ho-chi-minh" value="1">Hồ Chí Minh</option>
-                                <option data-name="ha-noi" value="2">Hà Nội</option>
-                                <option data-name="hai-duong" value="55">Hải Dương</option>
-                                <option data-name="hai-phong" value="3">Hải Phòng</option>
-                                <option data-name="quang-ninh" value="66">Quảng Ninh</option>
-                                <option data-name="nghe-an" value="28">Nghệ An</option>
-                                <option data-name="hue" value="5">Huế</option>
-                                <option data-name="da-nang" value="4"selected="selected">Đà Nẵng</option>
-                                <option data-name="binh-dinh" value="52">Bình Định</option>
-                                <option data-name="khanh-hoa" value="50">Khánh Hòa</option>
-                                <option data-name="binh-thuan" value="53">Bình Thuận</option>
-                                <option data-name="dak-lak" value="6">Đắk Lắk</option>
-                                <option data-name="binh-duong" value="7">Bình Dương</option>
-                                <option data-name="dong-nai" value="8">Đồng Nai</option>
-                                <option data-name="vung-tau" value="9">Vũng Tàu</option>
-                                <option data-name="an-giang" value="51">An Giang</option>
-                                <option data-name="can-tho" value="11">Cần Thơ</option>
-                                <option data-name="kien-giang" value="54">Kiên Giang</option>
-                                <option data-name="thanh-hoa" value="954">Thanh Hóa</option>
-                                <option data-name="ben-tre" value="1069">Bến Tre</option>
-                                <option data-name="nam-dinh" value="1072">Nam Định</option>
-                            </select>
-                        </div>
                         <div class="col-xs-5 userbox userbox-mobile">
                             <div class="logged-desktop">
                                 <a class="inline-block" tabindex="0" rel="popover-user">Võ Trung</a>

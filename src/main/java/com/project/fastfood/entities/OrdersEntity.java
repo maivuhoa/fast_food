@@ -24,8 +24,21 @@ public class OrdersEntity {
     private UsersEntity customer;
     private UsersEntity shiper;
 
+    public OrdersEntity(String name, Integer status, String address, String phone, WardsEntity ward, UsersEntity customer) {
+        this.name = name;
+        this.status = status;
+        this.address = address;
+        this.phone = phone;
+        this.ward = ward;
+        this.customer = customer;
+    }
+
+    public OrdersEntity() {
+    }
+
     @Id
     @Column(name = "id_order", nullable = false)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     public Integer getIdOrder() {
         return idOrder;
     }

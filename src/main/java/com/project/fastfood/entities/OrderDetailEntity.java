@@ -17,8 +17,19 @@ public class OrderDetailEntity {
     private OrdersEntity order;
     private ProductsEntity product;
 
+    public OrderDetailEntity(Double price, Integer quantity, OrdersEntity order, ProductsEntity product) {
+        this.price = price;
+        this.quantity = quantity;
+        this.order = order;
+        this.product = product;
+    }
+
+    public OrderDetailEntity() {
+    }
+
     @Id
     @Column(name = "id_order_detail", nullable = false)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     public Integer getIdOrderDetail() {
         return idOrderDetail;
     }
