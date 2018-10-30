@@ -29,6 +29,16 @@ public class ProductsEntity {
     private List<ComboEntity> combo;
     private List<ComboEntity> elementOfProductCombos;
 
+    public ProductsEntity() {
+    }
+
+    public ProductsEntity(int id, String name, Double price, String image) {
+        this.idProduct = id;
+        this.name = name;
+        this.image = image;
+        this.price = price;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_product", nullable = false)

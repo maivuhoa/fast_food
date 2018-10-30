@@ -15,7 +15,7 @@ import java.util.List;
 public class PublicPostPageController extends PublicSuperControler{
     @GetMapping("/discount")
     public String responseListPosts(HttpServletRequest request, ModelMap modelMap) {
-        List<PostsEntity> posts = postsService.findAllPosts();
+        List<PostsEntity> posts = postsService.findAllByType(0);
         PagedListHolder pagedListHolder = new PagedListHolder(posts);
         int page = ServletRequestUtils.getIntParameter(request, "page", 0);
         pagedListHolder.setPage(page);

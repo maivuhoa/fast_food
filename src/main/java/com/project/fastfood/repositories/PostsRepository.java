@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface PostsRepository extends JpaRepository<PostsEntity, Integer> {
-    Page<PostsEntity> findAllByOrderByIdPostDesc(Pageable pageable);
+    Page<PostsEntity> findAllByTypeEqualsOrderByIdPostDesc(int type, Pageable pageable);
     List<PostsEntity> findAllByType(Integer type);
 }

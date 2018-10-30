@@ -8,6 +8,7 @@
             <div class="col-md-12 menu-home-title">
                 <h1>Thực đơn</h1>
             </div>
+
             <div class="col-md-12">
                 <div id="menu-list-thuc-don" class="menu-list-thuc-don clearfix">
                     <select id="selectpicker_menu" onclick="menuAjax(this.value)" class="selectpicker form-control"
@@ -41,41 +42,88 @@
                         <div class="list-thuc-don-items">
                             <div class="row">
                                 <script type="text/javascript">
-                                    function view_product_detail (product) {
-                                       var products_infor = product.split("|");
+                                    function increaseValue() {
+                                        var value = parseInt(document.getElementById('quantity').value, 10);
+                                        value = isNaN(value) ? 0 : value;
+                                        value++;
+                                        document.getElementById('quantity').value = value;
+                                    }
+
+                                    function decreaseValue() {
+                                        var value = parseInt(document.getElementById('quantity').value, 10);
+                                        value = isNaN(value) ? 0 : value;
+                                        value < 1 ? value = 1 : '';
+                                        value--;
+                                        document.getElementById('quantity').value = value;
+                                    }
+
+                                    function view_product_detail(product) {
+                                        var products_infor = product.split("|");
+                                        var currentId = $('#product-id-chose').children().attr("id");
+                                        $('#' + currentId).attr('id', products_infor[0]);
                                         $("#product-name").html(products_infor[1]);
                                         $("#product-price").html(products_infor[2] + " VNĐ");
                                         $("#product-img").attr("src", "/public/public_pages/uploads/product/" + products_infor[3]);
-                                        if(products_infor[4] == 'false') {
-                                           $("#product-name-child").html(products_infor[1]);
-                                           $("#product-modal").modal('show');
-                                       } else {
-                                           $.ajax({
-                                               type : "POST",
-                                               contentType : "application/json",
-                                               url : "/combo/" + products_infor[0],
-                                               dataType : 'json',
-                                               success : function(result) {
-                                                   var i;
-                                                   var html = '';
-                                                   for (i = 0; i < result.length; i++) {
-                                                        html += '<li><i class="fa fa-circle"></i>'+ result[i].name + '</li>'
-                                                   }
-                                                   $("#product-name-child").html(html);
-                                                   $("#product-modal").modal('show');
-                                               },
-                                               error : function(e) {
-                                               }
+                                        if (products_infor[4] == 'false') {
+                                            $("#product-name-child").html(products_infor[1]);
+                                            $("#product-modal").modal('show');
+                                        } else {
+                                            $.ajax({
+                                                type: "POST",
+                                                contentType: "application/json",
+                                                url: "/combo/" + products_infor[0],
+                                                dataType: 'json',
+                                                success: function (result) {
+                                                    var i;
+                                                    var html = '';
+                                                    for (i = 0; i < result.length; i++) {
+                                                        html += '<li><i class="fa fa-circle"></i>' + result[i].name + '</li>'
+                                                    }
+                                                    $("#product-name-child").html(html);
+                                                    $("#product-modal").modal('show');
+                                                },
+                                                error: function (e) {
+                                                }
+                                            });
+                                        }
+                                    }
 
-
-                                           });
-                                       }
+                                    function add_to_cart() {
+                                        var id = $('#product-id-chose').children().attr("id");
+                                        var name = $("#product-name").html();
+                                        var price = $("#product-price").html().split(" ")[0];
+                                        var image = $("#product-img").attr("src");
+                                        var quantity = document.getElementById('quantity').value;
+                                        var formData = {
+                                            product: {
+                                                idProduct: id,
+                                                name: name,
+                                                price: price,
+                                                image: image
+                                            },
+                                            quantity: quantity,
+                                        }
+                                        $.ajax({
+                                            type: "POST",
+                                            contentType: "application/json",
+                                            url: "/add-cart",
+                                            data: JSON.stringify(formData),
+                                            dataType: 'json',
+                                            success: function (result) {
+                                                $("#cart_number").html(result);
+                                                $("#product-modal").modal('hide');
+                                            },
+                                            error: function (e) {
+                                                console.log(e);
+                                            }
+                                        });
                                     }
                                 </script>
                                 <c:forEach var="product" items="${products}">
                                     <div class="col-sm-4 col-xs-6 call-combo" data-id="24">
                                         <div class="item">
-                                            <a href="javascript:void(0);" onclick="view_product_detail('${product.toString()}');">
+                                            <a href="javascript:void(0);"
+                                               onclick="view_product_detail('${product.toString()}');">
                                                 <div class="image clearfix"><img
                                                         src="/public/public_pages/uploads/product/${product.getImage()}"
                                                         class="img-responsive center-block"></div>
@@ -91,7 +139,6 @@
                                         </div>
                                     </div>
                                 </c:forEach>
-
                             </div>
                         </div>
                     </div>
@@ -99,8 +146,6 @@
             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#product-modal">Open Modal
-    </button>
     <div id="product-modal" class="fancybox-overlay fancybox-overlay-fixed"
          style="width: auto; height: auto; display: none;">
         <div class="fancybox-wrap fancybox-desktop fancybox-type-inline fancybox-opened" tabindex="-1"
@@ -119,8 +164,9 @@
                                 <div class="container-fluid">
                                     <div class="row row-1">
                                         <div class="col-sm-5 image pd0">
-                                                <img id="product-img" src="https://kfcvietnam.com.vn/uploads/product/ee5a21ddbe890709de2cc5f2538bc899.png"
-                                                     class="img-responsive">
+                                            <img id="product-img"
+                                                 src="https://kfcvietnam.com.vn/uploads/product/ee5a21ddbe890709de2cc5f2538bc899.png"
+                                                 class="img-responsive">
                                             <a class="like" href="javascript:;"
                                                onclick="product.favorite(209,'product')">
                                             <span id="img-hearth">
@@ -132,12 +178,13 @@
                                         </div>
                                         <div class="col-sm-7 info">
                                             <div class="title"><span
-                                                    class="inline-block" id="product-name">Gà Giòn Không Cay (3 Miếng)</span></div>
+                                                    class="inline-block"
+                                                    id="product-name"></span></div>
                                             <div class="option">
-                                                <ul class="select-option">
+                                                <ul class="select-option" id="product-id">
                                                     <li>
                                                         <ul class="list-unstyled" id="product-name-child">
-                                                            <li ><i class="fa fa-circle" ></i> Gà Giòn Không Cay (3 Miếng)
+                                                            <li><i class="fa fa-circle"></i>
                                                             </li>
                                                         </ul>
                                                         <!--ADD MORE-->
@@ -145,14 +192,17 @@
                                                     </li>
                                                 </ul>
                                             </div>
+                                            <div id="product-id-chose">
+                                                <p id="0"></p>
+                                            </div>
                                             <div class="quantity-price-addcart">
                                                 <div class="row">
                                                     <div class="col-xs-12 col-md-12 left b-l">
                                                         <span class="sl">Số lượng:&nbsp;&nbsp;</span>
-                                                        <div class="quantity-wap numbers-row clearfix">
-                                                            <input type="text" class="quantity" value="1">
-                                                            <a class="btn inc button">+</a><a
-                                                                class="btn dec button">−</a></div>
+                                                        <div class="quantity-wap clearfix">
+                                                            <input id="quantity" type="text" class="quantity" value="1">
+                                                            <a class="btn inc button" onclick="increaseValue()">+</a><a
+                                                                class="btn dec button" onclick="decreaseValue()">−</a></div>
                                                         <div class="price clearfix">
                                                             <div class="product_product_display" id="product-price">98.
                                                                 <small>000</small>
@@ -162,7 +212,7 @@
                                                     </div>
                                                     <div class="col-xs-12 col-md-12 right b-r">
                                                         <button type="button" class="btn btn-add-cart pull-right"
-                                                                onclick="product.add_to_cart(209);">Thêm vào giỏ hàng
+                                                                onclick="add_to_cart();">Thêm vào giỏ hàng
                                                         </button>
                                                     </div>
                                                 </div>
@@ -187,6 +237,7 @@
                                         $('#product-modal').modal('hide');
                                     });
                                 });
+
                             </script>
                         </div>
                     </div>

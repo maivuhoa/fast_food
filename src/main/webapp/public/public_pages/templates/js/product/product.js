@@ -126,10 +126,7 @@ var product = {
             }
         })
     },
-    add_to_cart:function(id,is_mobile){
-        if(!is_mobile){
-            is_mobile = false;
-        }
+    add_to_cart:function(id){
         var quantity = jQuery(".quantity").val();
         var price = jQuery(".price_value").val();
         var type = jQuery(".type").val();
@@ -408,7 +405,6 @@ var product = {
         var point = $("#cart_total_point").data('point');
         jQuery("#cart_total_price").html(product.call_price(total));
         jQuery("#cart_total_point").html(product.call_point(total,score,point));
-        
     },
     place_order:function(){
         jQuery.ajax({

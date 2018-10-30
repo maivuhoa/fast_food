@@ -26,7 +26,7 @@ public class PostsService {
 
     public List<PostsEntity> findAllPostNewest() {
         Pageable pageable = new PageRequest(0, 6);
-        Page<PostsEntity> postsEntities = postsRepository.findAllByOrderByIdPostDesc(pageable);
+        Page<PostsEntity> postsEntities = postsRepository.findAllByTypeEqualsOrderByIdPostDesc(1, pageable);
         List<PostsEntity> posts = new ArrayList<>(postsEntities.getSize());
         for (PostsEntity postsEntity : postsEntities) {
             posts.add(postsEntity);
