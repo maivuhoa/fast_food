@@ -13,12 +13,7 @@
                 </ul>
             </div>
         </div>
-        <div class="note-b">
-            <span class="bold">CHÚ Ý:</span>
-            <strong>Sau 20:00,</strong>
-            KFC sẽ không thể giao hàng tận nơi ở một số khu vực. <a href="javascript:void(0)" onclick="timePayment()">Xem
-            danh sách chi tiết.</a>
-        </div>
+        
         <div class="row">
             <div class="col-md-12">
                 <div class="box-ttdh clearfix" id="address-user">

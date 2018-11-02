@@ -6,7 +6,7 @@
 <meta name="format-detection" content="telephone=no"/>
 <meta name="author" content="KFC Vietnam"/>
 <link rel="shortcut icon" type="img/x-icon" href="https://kfcvietnam.com.vn/favicon.ico"/>
-<title>Địa chỉ giao hàng | KFC Việt Nam</title>
+<title>Địa chỉ giao hàng | VINACHIEN Việt Nam</title>
 <meta name="DC.title" content="Địa chỉ giao hàng | KFC Việt Nam"/>
 <meta name="geo.region" content="VN-SG"/>
 <meta name="geo.placename" content=""/>
