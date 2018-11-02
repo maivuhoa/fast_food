@@ -42,4 +42,25 @@ public class Test {
     public String viewShipAddress() {
         return "public.ship_address.index";
     }
+
+    @GetMapping("/admin/categories")
+    public String viewCategories() {
+        return "admin.category.index";
+    }
+    @GetMapping("/admin/invoice")
+    public String viewInvoice() {
+        return "admin.invoice.index";
+    }
+    @GetMapping("/admin/orders")
+    public String viewOrders() {
+        return "admin.orders.index";
+    }
+    @GetMapping("/admin/order_detail")
+    public String viewOrderDetail() {
+        return "admin.order_detail.index";
+    }
+    @GetMapping("/admin/products/edit")
+    public String editProduct() {
+        return "admin.products.edit";
+    }
 }

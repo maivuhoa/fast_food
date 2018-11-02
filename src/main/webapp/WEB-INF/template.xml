@@ -4,11 +4,12 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
        
 <tiles-definitions>
-  <!-- admin -->  
+  <!-- public -->
   <definition name="public.template" template="/WEB-INF/jsp/public_pages/layouts/template.jsp">
     <put-attribute name="header" value="/WEB-INF/jsp/public_pages/layouts/header.jsp" />
     <put-attribute name="footer" value="/WEB-INF/jsp/public_pages/layouts/footer.jsp" />
     <put-attribute name="content" value="" />
+    <put-attribute name="meta_description" value="" />
   </definition>
   
   <definition name="public.category.index" extends="public.template">
@@ -70,5 +71,40 @@
   <definition name="public.recruitment.index" extends="public.template">
     <put-attribute name="content" value="/WEB-INF/jsp/public_pages/recruitment/index.jsp" />
     <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/recruitment/meta_description.jsp" />
+  </definition>
+
+  <!-- admin -->
+  <definition name="admin.template" template="/WEB-INF/jsp/admin_pages/layouts/template.jsp">
+    <put-attribute name="header" value="/WEB-INF/jsp/admin_pages/layouts/header.jsp" />
+    <put-attribute name="left_bar" value="/WEB-INF/jsp/admin_pages/layouts/left_bar.jsp" />
+    <put-attribute name="level_style" value="" />
+    <put-attribute name="level_scripts" value="" />
+    <put-attribute name="content" value="" />
+  </definition>
+
+  <definition name="admin.category.index" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/categories/index.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/categories/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/categories/level_scripts.jsp" />
+  </definition>
+  <definition name="admin.invoice.index" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/invoice/index.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/invoice/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/invoice/level_scripts.jsp" />
+  </definition>
+  <definition name="admin.orders.index" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/orders/index.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/orders/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/orders/level_scripts.jsp" />
+  </definition>
+  <definition name="admin.order_detail.index" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/order_detail/index.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/order_detail/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/order_detail/level_scripts.jsp" />
+  </definition>
+  <definition name="admin.products.edit" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/products/edit.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/products/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/products/level_scripts.jsp" />
   </definition>
 </tiles-definitions>
