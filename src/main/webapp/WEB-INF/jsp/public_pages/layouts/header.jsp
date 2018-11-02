@@ -54,19 +54,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-2 langbox langbox-mobile">
-                            <div class="pull-right">
-                                <span style="display: none">Ngôn ngữ:&nbsp;&nbsp; </span>&nbsp;
-                                <a class="inline-block active" href="https://kfcvietnam.com.vn/vn/thuc-don/0/phan-an-combo.html">
-                                    <img src="https://kfcvietnam.com.vn/templates/images/lang-vn.png" class="img-responsive img-desktop"/>
-                                    <img src="https://kfcvietnam.com.vn/templates/images/lang-vn-mobile.png" class="img-responsive img-mobile" style="display: none"/>
-                                </a>
-                                <a class="inline-block " href="https://kfcvietnam.com.vn/en/thuc-don/0/phan-an-combo.html">
-                                    <img src="/public/public_pages/templates/images/lang-en.png" class="img-responsive img-desktop"/>
-                                    <img src="/public/public_pages/templates/images/lang-en-mobile.png" class="img-responsive img-mobile" style="display: none"/>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -80,25 +67,6 @@
             <button type="button" class="btn_menu_mobile">
                 <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <div class="menuMobile menuH">
-                <nav id="navbar_mobile" class="navbar_mobile">
-                    <a class="btn-close-menu"></a>
-                    <ul class="nav navbar-nav">
-                        <li class="item"><a href="/about">Giới thiệu</a></li>
-                        <li class="item"><a rel="popup-thuc-don" href="/index/${categories.get(0).getIdCategory()}">Thực đơn</a></li>
-                        <li class="item"><a href="/discount">Khuyến mãi</a></li>
-                        <li class="item"><a href="/recruitment">Nghề nghiệp</a></li>
-                    </ul>
-                    <div class="app-store-mobile">
-                        <p>Tải ứng dụng KFC Vietnam để mua hàng được nhiều ưu đãi</p>
-                        <div class="button-app-mobile">
-                            <a class="tai-app-btn1" href="https://itunes.apple.com/tr/app/kfc-vietnam/id562164615?mt=8" target="_blank" title=""><img src="https://kfcvietnam.com.vn/templates/images/tai-app-btn-1-vn.png" class="img-responsive center-block"></a>
-                            <a class="tai-app-btn2" href="https://play.google.com/store/apps/details?id=kfc.vietnam&hl=vi" target="_blank" title=""><img src="https://kfcvietnam.com.vn/templates/images/tai-app-btn-2-vn.png" class="img-responsive center-block"></a>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </nav>
-            </div>
             <a class="navbar-brand" href="https://kfcvietnam.com.vn/vn">
                 <img src="/public/public_pages/templates/images/logo-vn.png" class="logo-img img-responsive"/>
                 <img src="/public/public_pages/templates/images/logo-kfc.png" class="logo-text img-responsive"/>
@@ -152,19 +120,9 @@
         </div>
     </div>
 </nav>
-<script type="text/javascript">
-    var url = 'https://kfcvietnam.com.vn/';
-    jQuery(document).ready(function(){
-        $.ajaxSetup({
-            data: {
-                csrf_kfc_name: '7eaa990dabe717e0974c9189bd8704e4'
-            }
-        });
-    });
-</script>
 <section class="banner  clearfix">
     <img src="/public/public_pages/templates/images/banner-fake.png" class="img-responsive visible-xs visible-sm">
     <div class="fadeOut owl-carousel owl-theme">
-        <div class="item" style="background-image:url(https://kfcvietnam.com.vn/uploads/banner/7d3909e01a26f1650c19f3ca521d0b25.png)"><a href="https://kfcvietnam.com.vn/vn/khuyen-mai/69/khoai-tay-vien-mashies-gion-thom-chuan-vi-ngon.html" target="_blank" title="">&nbsp;</a></div>
+        <div class="item" style="background-image:url(https://kfcvietnam.com.vn/uploads/banner/7d3909e01a26f1650c19f3ca521d0b25.png)"><a href="" target="_blank" title="">&nbsp;</a></div>
     </div>
 </section>
