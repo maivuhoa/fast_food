@@ -16,10 +16,6 @@ public class PostsService {
     @Autowired
     PostsRepository postsRepository;
 
-    public List<PostsEntity> findAllPosts() {
-        return postsRepository.findAll();
-    }
-
     public PostsEntity findPostById(int id) {
         return postsRepository.findById(id).get();
     }

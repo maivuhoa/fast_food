@@ -56,7 +56,7 @@
                         var cartNumber = resp.split("|")[0];
                         var totalMoney = resp.split("|")[1];
                         jQuery('#cart_number').html(cartNumber);
-                        jQuery('#cart_total_price').html(totalMoney);
+                        jQuery('#total_money').html(totalMoney);
 
                     },
                     error: function (e) {
@@ -85,7 +85,7 @@
                             var cartNumber = resp.split("|")[0];
                             var totalMoney = resp.split("|")[1];
                             jQuery('#cart_number').html(cartNumber);
-                            jQuery('#cart_total_price').html(totalMoney);
+                            jQuery('#total_money').html(totalMoney);
                         },
                         error: function (e) {
                             console.log("ERROR: ", e);
@@ -192,17 +192,32 @@
                             </div>
                             <div class="price b-mobile b-right clearfix">
                                 <div class="total_price" id="cart_total_price">
-                                    <c:if test="${sessionScope.cart.getQuantityTotal() == 0}">
-                                        0
-                                    </c:if>
-                                    <c:if test="${sessionScope.cart.getQuantityTotal() != 0}">
-                                        ${sessionScope.cart.getAmountTotal()}
-                                    </c:if>
+                                    <div id="total_money">
+                                        <c:if test="${sessionScope.cart.getQuantityTotal() == 0}">
+                                            0
+                                        </c:if>
+                                        <c:if test="${sessionScope.cart.getQuantityTotal() != 0}">
+                                            ${sessionScope.cart.getAmountTotal()}
+                                        </c:if>
+                                    </div>
+
                                     <small>VNĐ</small>
                                 </div>
                             </div>
+                            <script>
+                                function place_order(){
+                                    var value = parseFloat($('#total_money').text());
+                                    if(value < 80000)
+                                        $('#notification-modal').modal('show');
+                                    else
+                                        window.location = '/checkout/index';
+                                }
+                                function modal_close() {
+                                    $('#notification-modal').modal('hide');
+                                }
+                            </script>
                             <div class="clearfix b-btn-mobile">
-                                <a href="javascript:void(0);" onclick="product.place_order();"
+                                <a href="javascript:void(0);" onclick="place_order();"
                                    class="btn btn-danger btn-lg btn-dk">đặt hàng</a>
                             </div>
                         </div>
@@ -210,5 +225,31 @@
                 </div>
             </div>
         </div>
+
+
+
+
+        <div class="modal fade" id="notification-modal" role="dialog" style="display: none;">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div  class="popup-wap clearfix"> <a class="btn-close" onclick="modal_close();"></a>
+                        <div class="three-vertical top clearfix"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="three-vertical bottom clearfix"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="popup-head text-center">Tổng giá tiền phải lớn hơn  80.000 VNĐ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
     </div>
 </section>

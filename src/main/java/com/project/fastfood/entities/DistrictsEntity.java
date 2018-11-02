@@ -1,11 +1,15 @@
 package com.project.fastfood.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
 @Table(name = "districts", schema = "food_and_drink")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class DistrictsEntity {
     private String idDistrict;
     private String name;
@@ -55,6 +59,7 @@ public class DistrictsEntity {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     @JoinColumn(name = "province_id", referencedColumnName = "id_province", nullable = false)
     public ProvincesEntity getProvince() {
         return province;
@@ -65,6 +70,7 @@ public class DistrictsEntity {
     }
 
     @OneToMany(mappedBy = "district", fetch = FetchType.LAZY)
+    @JsonIgnore
     public List<WardsEntity> getWards() {
         return wards;
     }

@@ -19,6 +19,14 @@ public class PublicSuperControler {
     ComboService comboService;
     @Autowired
     ShopService shopService;
+    @Autowired
+    ProvincesService provincesService;
+    @Autowired
+    DistrictsService districtsService;
+    @Autowired
+    WardsServices wardsServices;
+    @Autowired
+    OrdersService ordersService;
 
     @ModelAttribute
     protected void responseListCategoriesToHomePage(ModelMap modelMap) {
