@@ -34,10 +34,10 @@ public class Test {
 //    public String viewAbout() {
 //        return "public.about.index";
 //    }
-    @GetMapping("/register")
-    public String viewRegister() {
-        return "public.register.index";
-    }
+//    @GetMapping("/register")
+//    public String viewRegister() {
+//        return "public.register.index";
+//    }
     @GetMapping("/ship-address")
     public String viewShipAddress() {
         return "public.ship_address.index";

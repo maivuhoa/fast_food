@@ -115,7 +115,7 @@
                                                     <span class="pname">${p.getProduct().getName()}</span>
                                                 </div>
                                             </div>
-                                            <div class="row collapse" id="collapseproduct_209_1">
+                                            _district                                      <div class="row collapse" id="collapseproduct_209_1">
                                                 <div class="col-xs-4 col-md-4 img">
                                                     <img src="https://kfcvietnam.com.vn/templates/images/popup-img-pro.jpg"
                                                          class="img-responsive"/>
