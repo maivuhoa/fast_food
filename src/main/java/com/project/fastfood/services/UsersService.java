@@ -12,4 +12,12 @@ public class UsersService {
     public void saveUser(UsersEntity userEntity) {
         usersRepository.save(userEntity);
     }
+    public void updateUser(UsersEntity usersEntity) {
+        usersRepository.delete(usersEntity);
+        usersRepository.save(usersEntity);
+    }
+
+    public UsersEntity findUserByEmail(String email) {
+        return usersRepository.findByEmail(email);
+    }
 }

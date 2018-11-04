@@ -72,6 +72,22 @@
     <put-attribute name="content" value="/WEB-INF/jsp/public_pages/recruitment/index.jsp" />
     <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/recruitment/meta_description.jsp" />
   </definition>
+  <definition name="public.login.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/login/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/login/meta_description.jsp" />
+  </definition>
+  <definition name="public.profile.address" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/profile/address.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/profile/meta_description.jsp" />
+  </definition>
+  <definition name="public.profile.history" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/profile/history.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/profile/meta_description.jsp" />
+  </definition>
+  <definition name="public.profile.favorite" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/profile/favorite.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/profile/meta_description.jsp" />
+  </definition>
 
   <!-- admin -->
   <definition name="admin.template" template="/WEB-INF/jsp/admin_pages/layouts/template.jsp">
