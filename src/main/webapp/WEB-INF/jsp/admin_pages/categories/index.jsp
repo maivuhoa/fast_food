@@ -16,6 +16,18 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+                            <c:if test="${success != null}">
+                                <div class="alert alert-success" style="width:100%; margin-top:18px;">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                                    <strong>Success!</strong> ${success}.
+                                </div>
+                            </c:if>
+                            <c:if test="${error != null}">
+                                <div class="alert alert-danger" style="width:100%; margin-top:18px;">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                                    <strong>Error!</strong> ${error}.
+                                </div>
+                            </c:if>
                             <table class="table table-tools table-hover">
                                 <thead>
                                     <tr>
@@ -31,7 +43,7 @@
                                     <tr>
                                         <td>${category.getIdCategory()}</td>
                                         <td>${category.getName()}</td>
-                                        <td><img src="${category.getImage()}"></td>
+                                        <td><img width="200" height="150" src="${pageContext.request.contextPath}/files/${category.getImage()}"></td>
                                         <td>${category.getCreateAt()}</td>
                                         <td class="text-center ">
                                             <a href="/admin/categories/${category.getIdCategory()}/edit" class="edit btn btn-sm btn-default"><i class="fa fa-pencil"></i> Edit</a>

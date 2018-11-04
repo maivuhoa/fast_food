@@ -66,5 +66,6 @@
 <tiles:insertAttribute name="level_scripts"></tiles:insertAttribute>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script src="/public/admin_pages/js/application.js"></script>
+<script src="/public/admin_pages/js/custom.js"></script>
 </body>
 </html>

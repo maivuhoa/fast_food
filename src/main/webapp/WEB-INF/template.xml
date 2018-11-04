@@ -87,6 +87,13 @@
     <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/categories/level_style.jsp" />
     <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/categories/level_scripts.jsp" />
   </definition>
+
+  <definition name="admin.category.new" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/categories/new.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/categories/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/categories/level_scripts.jsp" />
+  </definition>
+
   <definition name="admin.invoice.index" extends="admin.template">
     <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/invoice/index.jsp" />
     <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/invoice/level_style.jsp" />
