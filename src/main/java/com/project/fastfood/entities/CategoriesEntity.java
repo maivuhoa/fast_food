@@ -1,5 +1,9 @@
 package com.project.fastfood.entities;
 
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
@@ -19,6 +23,7 @@ public class CategoriesEntity {
 
     @Id
     @Column(name = "id_category", nullable = false)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     public Integer getIdCategory() {
         return idCategory;
     }
@@ -39,6 +44,7 @@ public class CategoriesEntity {
 
     @Basic
     @Column(name = "create_at", nullable = true)
+    @CreationTimestamp
     public Timestamp getCreateAt() {
         return createAt;
     }
@@ -49,6 +55,7 @@ public class CategoriesEntity {
 
     @Basic
     @Column(name = "update_at", nullable = true)
+    @UpdateTimestamp
     public Timestamp getUpdateAt() {
         return updateAt;
     }
