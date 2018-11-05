@@ -14,4 +14,6 @@ public interface ProductsRepository extends JpaRepository<ProductsEntity, Intege
     Page<ProductsEntity> findAllByCategory_IdCategory(int category_id, Pageable pageable);
 
     ProductsEntity findByIdProductAndTypeEquals(int id, boolean isCombo);
+
+    List<ProductsEntity> findProductsEntitiesByTypeEquals(boolean isCombo);
 }
