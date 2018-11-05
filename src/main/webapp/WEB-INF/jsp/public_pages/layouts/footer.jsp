@@ -7,9 +7,9 @@
                 <div class="col-md-4 col-sm-5">
                     <div class="social">
                         <ul class="nav nav-pills">
-                            <li><a href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="" target="_blank"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="" target="_blank"><i class="fa fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/3CES-Food-1965407583575144/?modal=admin_todo_tour" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                 <div class="company clearfix">CÔNG TY VINACHIEN VIỆT NAM</div>
                 <div class="row">
                     <div class="col-xs-12 col-md-9">
-                        <div class="clearfix"><span class="inline-block">Số 292 Bà Triệu, P.Lê Đại Hành, Q.Hai Bà Trưng, Hà Nội.</span><br><span class="inline-block">Điện thoại: (028) 38489828</span><span class="break"> | </span><span class="inline-block">Email: lienhe@gmail.com</span> <br/>
+                        <div class="clearfix"><span class="inline-block">Số 292 Nguyễn Hữu Thọ, Q.Cẩm Lệ, Đà Nẵng.</span><br><span class="inline-block">Điện thoại: (028) 38489828</span><span class="break"> | </span><span class="inline-block">Email: lienhe@gmail.com</span> <br/>
                         </div>
                     </div>
                 </div>

@@ -30,4 +30,8 @@ public class CategoriesService {
     public void deleteCategory(CategoriesEntity category) {
         categoriesRepository.delete(category);
     }
+
+    public CategoriesEntity findCategoryByName(String name) {
+        return categoriesRepository.findByName(name);
+    }
 }

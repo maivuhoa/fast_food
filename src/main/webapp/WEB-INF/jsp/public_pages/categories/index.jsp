@@ -29,11 +29,9 @@
                     </select>
                 </div>
                 <div class="tag">
-                    <h2>Phần ăn Combo</h2>
-                    <h2>Gà Rán & Quay</h2>
-                    <h2>BURGER - CƠM</h2>
-                    <h2>Thức Ăn Nhẹ</h2>
-                    <h2>Tráng Miệng & Thức Uống</h2>
+                    <c:forEach var="cat" items="${categories}">
+                        <h2>${cat.getName()}</h2>
+                    </c:forEach>
                 </div>
             </div>
             <div class="col-md-12">
@@ -125,7 +123,7 @@
                                             <a href="javascript:void(0);"
                                                onclick="view_product_detail('${product.toString()}');">
                                                 <div class="image clearfix"><img
-                                                        src="/public/public_pages/uploads/product/${product.getImage()}"
+                                                        src="/public/public_pages/uploads/images/${product.getImage()}"
                                                         class="img-responsive center-block"></div>
                                                 <div class="title clearfix">
                                                     <h4>${product.getName()}</h4>

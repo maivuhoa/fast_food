@@ -20,7 +20,7 @@
                 </div>
                 <div class="box-don-hang">
                     <div class="title title-ttkh">Địa chỉ giao hàng <a class="btn btn-sua btn-danger"
-                                                                       href="https://kfcvietnam.com.vn/vn/thong-tin-dat-hang.html">Sửa</a>
+                                                                       href="/profile/address">Sửa</a>
                     </div>
                     <div class="container-fluid">
                         <div class="row content">
@@ -165,7 +165,7 @@
                                 <div class="row blink">
                                     <div class="link-more">
                                         <a target="_blank"
-                                           href="https://kfcvietnam.com.vn/vn/khuyen-mai/73/thu-hai-co-1-khong-2-cung-kfc.html">
+                                           href="/discount">
                                             <div class="img-loa">
                                                 <img src="https://kfcvietnam.com.vn/templates/images/loa.png"
                                                      class="img-responsive"/>

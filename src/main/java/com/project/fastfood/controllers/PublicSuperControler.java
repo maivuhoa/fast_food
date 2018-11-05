@@ -1,8 +1,10 @@
 package com.project.fastfood.controllers;
 
 import com.project.fastfood.entities.CategoriesEntity;
+import com.project.fastfood.entities.UsersEntity;
 import com.project.fastfood.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -37,5 +39,21 @@ public class PublicSuperControler {
     protected void responseListCategoriesToHomePage(ModelMap modelMap) {
         List<CategoriesEntity> categories = categoriesService.findAllCategories();
         modelMap.addAttribute("categories", categories);
+        modelMap.addAttribute("emailHeader", getPrincipal());
+    }
+    public String getPrincipal(){
+        String email = null;
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UsersEntity) {
+            email = ((UsersEntity)principal).getEmail();
+        } else {
+            if("anonymousUser".equals(principal.toString())) {
+                email = "";
+            } else {
+                email = principal.toString().split(" ")[2].split(";")[0];
+            }
+        }
+        return email;
     }
 }

@@ -26,17 +26,7 @@ public class PublicProfileInformationController extends PublicSuperControler{
         UsersEntity usersEntity = usersService.findUserByEmail(email);
         modelMap.addAttribute("usersEntity", usersEntity);
     }
-    public String getPrincipal(){
-        String email = null;
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-        if (principal instanceof UsersEntity) {
-            email = ((UsersEntity)principal).getEmail();
-        } else {
-            email = principal.toString().split(" ")[2].split(";")[0];
-        }
-        return email;
-    }
     @PostMapping("/profile")
     public String register(@RequestParam("idUser") String idUser, @RequestParam("fullname") String fullname, @RequestParam("email") String email, @RequestParam("password") String password, @RequestParam("phone") String phone, @RequestParam("address") String address, @RequestParam("idRole") String role) {
         password = BCrypt.hashpw(password, BCrypt.gensalt());

@@ -65,7 +65,7 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="label col-md-4 col-xs-4">Địa chỉ (Số nhà - Tên đường):</div>
-                                                        <div class="input col-md-8 col-xs-8"><input class="form-control input-lg" type="text" id="user_address" name="user_address"></div>
+                                                        <div class="input col-md-8 col-xs-8"><input class="form-control input-lg" type="text" id="user_addresss" name="user_address"></div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="label col-md-4 col-xs-4">Tỉnh/Thành phố:</div>

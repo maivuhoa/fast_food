@@ -18,6 +18,10 @@ public class UsersService {
     }
 
     public UsersEntity findUserByEmail(String email) {
-        return usersRepository.findByEmail(email);
+        return usersRepository.findUsersEntityByEmail(email);
+    }
+
+    public UsersEntity findUserById(Integer id) {
+        return usersRepository.findUsersEntityByIdUser(id);
     }
 }

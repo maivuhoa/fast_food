@@ -52,22 +52,22 @@
                                                                     <div class="divShare dropdown-menu">
                                                                         <ul>
                                                                             <li>
-                                                                                <a href="https://www.facebook.com/sharer/sharer.php?u=/vn/khuyen-mai/73/thu-hai-co-1-khong-2-cung-kfc.html"
+                                                                                <a href="https://www.facebook.com/3CES-Food-1965407583575144/?modal=admin_todo_tour"
                                                                                    title="Face" target="_blank">
                                                                                     <!--img src="https://www.kfcvietnam.com.vn/templates/images/share_face.png" alt="Face" width="14" height="14" class="img_shares"-->
                                                                                     Facebook</a></li>
                                                                             <li>
-                                                                                <a href="https://plus.google.com/share?url=/vn/khuyen-mai/73/thu-hai-co-1-khong-2-cung-kfc.html"
+                                                                                <a href="#"
                                                                                    title="Google +" target="_blank">
                                                                                     <!--img src="https://www.kfcvietnam.com.vn/templates/images/share_gg.png" alt="Google +" width="14" height="14" class="img_shares"-->
                                                                                     Google +</a></li>
                                                                             <li>
-                                                                                <a href="http://link.apps.zing.vn/share?u=/vn/khuyen-mai/73/thu-hai-co-1-khong-2-cung-kfc.html"
+                                                                                <a href="#"
                                                                                    title="Zing" target="_blank">
                                                                                     <!--img src="https://www.kfcvietnam.com.vn/templates/images/share_zing.png" alt="Zing" width="14" height="14" class="img_shares"-->
                                                                                     ZingMe</a></li>
                                                                             <li>
-                                                                                <a href="http://twitthis.com/twit?url=/vn/khuyen-mai/73/thu-hai-co-1-khong-2-cung-kfc.html"
+                                                                                <a href="#"
                                                                                    title="Twitter" target="_blank">
                                                                                     <!--img src="https://www.kfcvietnam.com.vn/templates/images/share_twitter.png" alt="Twitter" width="14" height="14" class="img_shares"-->
                                                                                     Twitter</a></li>

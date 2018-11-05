@@ -13,7 +13,10 @@
                         <div class="col-xs-5 userbox userbox-mobile">
                             <div class="logged-desktop">
                                 <a class="inline-block" tabindex="0" rel="popover-user">${pageContext.request.userPrincipal.name}</a>
-                                <a class="inline-block" onclick="callLogin();">Đăng nhập</a>
+                                <c:if test="${emailHeader == ''}">
+                                    <a class="inline-block" onclick="callLogin();">Đăng nhập</a>
+                                    <a class="inline-block" href="/register">Đăng kí</a>
+                                </c:if>
                             </div>
                             <div class="logged-mobile" style="display: none">
                                 <div class="say-hi">
@@ -39,7 +42,7 @@
                                             <div class="clearfix"><span>${pageContext.request.userPrincipal.name}</span></div>
                                             <div class="clearfix">
                                                 <h5>
-                                                    <img src="https://kfcvietnam.com.vn/templates/images/gift-thanh-toan-md-mobile.png" alt="" class="img-responsive"/>0
+                                                    <img src="/about" alt="" class="img-responsive"/>0
                                                 </h5>
                                             </div>
                                         </div>
@@ -65,10 +68,10 @@
             <button type="button" class="btn_menu_mobile">
                 <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://kfcvietnam.com.vn/vn">
-                <img src="/public/public_pages/templates/images/logo-vn.png" class="logo-img img-responsive"/>
-                <img src="/public/public_pages/templates/images/logo-kfc.png" class="logo-text img-responsive"/>
-                <img src="/public/public_pages/templates/images/logo-kfc-new.png" class="logo-text-mobile img-responsive" style="display: none"/>
+            <a class="navbar-brand" href="/about">
+                <img src="/public/public_pages/templates/images/logo-2.png" class="logo-img img-responsive" style="width:300px; height:100px;"/>
+                <%--<img src="/public/public_pages/templates/images/logo-kfc.png" class="logo-text img-responsive"/>--%>
+                <%--<img src="/public/public_pages/templates/images/logo-kfc-new.png" class="logo-text-mobile img-responsive" style="display: none"/>--%>
             </a>
             <div class="cartbox clearfix" id="cart_box" >
                 <a href="/cart">
@@ -84,7 +87,7 @@
                 </div>
             </div>
             <a class="giao-hang inline-block">
-                <img src="/public/public_pages/templates/images/giao-hang-vn.png" class="img-responsive img-desktop"/>
+                <img src="/public/public_pages/templates/images/logo-2.png" class="img-responsive img-desktop" style="width:210px; height:70px;"/>
             </a>
         </div>
         <div class="clearfix"></div>
@@ -108,7 +111,7 @@
                     <c:forEach var="cat" items="${categories}">
                         <div class="item">
                             <a href="/index/${cat.getIdCategory()}">
-                                <div class="image"><img src="/public/public_pages/uploads/category/${cat.getImage()}" class="img-responsive center-block"></div>
+                                <div class="image"><img src="/public/public_pages/uploads/images/${cat.getImage()}" class="img-responsive center-block"></div>
                                 <div class="title">${cat.getName()}</div>
                             </a>
                         </div>
@@ -119,8 +122,9 @@
     </div>
 </nav>
 <section class="banner  clearfix">
-    <img src="/public/public_pages/templates/images/banner-fake.png" class="img-responsive visible-xs visible-sm">
+    <img src="/public/public_pages/uploads/images/banner.png" class="img-responsive visible-xs visible-sm">
     <div class="fadeOut owl-carousel owl-theme">
-        <div class="item" style="background-image:url(https://kfcvietnam.com.vn/uploads/banner/7d3909e01a26f1650c19f3ca521d0b25.png)"><a href="" target="_blank" title="">&nbsp;</a></div>
+        <div class="item" style="background-image:url(../../../../public/public_pages/uploads/images/banner.png)"><a href="/about" target="_blank" title="">&nbsp;</a></div>
+
     </div>
 </section>

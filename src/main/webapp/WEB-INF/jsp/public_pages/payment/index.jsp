@@ -13,7 +13,7 @@
                 <p style="padding: 25px 0 0 0;">Chúng tôi sẽ liên hệ với quý khách trong thời gian sớm nhất.</p>
             </div>
             <div class="btn-backhome">
-                <a href="/index/1" class="backhome">QUAY VỀ TRANG CHỦ</a>
+                <a href="/about" class="backhome">QUAY VỀ TRANG CHỦ</a>
             </div>
         </div>
     </div>

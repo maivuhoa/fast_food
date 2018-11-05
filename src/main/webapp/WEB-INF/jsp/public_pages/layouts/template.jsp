@@ -55,7 +55,7 @@
                     <div class="popup-head clearfix">Đăng nhập</div>
                 </div>
             </div>
-            <form action="login" method="post" accept-charset="utf-8" id="frm_loginTop" autocomplete="off">
+            <form action="/login" method="post" accept-charset="utf-8" id="frm_loginTop" autocomplete="off">
                 <div style="display:none">
                     <input type="hidden" name="csrf_kfc_name" value="7eaa990dabe717e0974c9189bd8704e4" />
                 </div>

@@ -12,7 +12,7 @@
 <meta name="geo.placename" content=""/>
 <meta name="title" content="Đăng ký thành viên | VINACHIEN Việt Nam"/>
 <meta name="keywords" content="đăng ký thành viên, đăng ký tài khoản"/>
-<meta name="description" content="Đăng ký thành viên cùng KFC để nhận các ưu đãi bất ngờ"/>
+<meta name="description" content="Đăng ký thành viên cùng VINACHIEN để nhận các ưu đãi bất ngờ"/>
 <meta name="robots" content="all"/>
 <meta name="googlebot" content="all"/>
 <meta name="generator" content="HTML Tidy for Windows (vers 14 February 2015), see www.w3.org"/>
@@ -21,7 +21,7 @@
 <meta name="distribution" content="Global"/>
 <meta name="REVISIT-AFTER" content="1 DAYS"/>
 <meta name="RATING" content="GENERAL"/>
-<link rel="canonical" href="//vn/thanh-vien.html"/>
+<link rel="canonical" href="/register"/>
 
 <meta property="og:url" content="/vn/thanh-vien.html"/>
 <meta property="og:type" content="website"/>

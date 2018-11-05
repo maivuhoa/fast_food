@@ -18,11 +18,11 @@
                                         <div class="top-content">
                                             <div class="row">
                                                 <div class="l-image col-md-5"><img src="https://kfcvietnam.com.vn/templates/images/nghenghiep-4.png" class="img-responsive"></div>
-                                                <div class="r-text col-md-7">HÃY CÙNG CHÚNG TÔI MANG SỰ HÀI LÒNG VÀ VỊ NGON CỦA KFC ĐẾN TẤT CẢ MỌI NGƯỜI Ở KHẮP MỌI MIỀN ĐẤT VIỆT!</div>
+                                                <div class="r-text col-md-7">HÃY CÙNG CHÚNG TÔI MANG SỰ HÀI LÒNG VÀ VỊ NGON CỦA VINACHIEN ĐẾN TẤT CẢ MỌI NGƯỜI Ở KHẮP MỌI MIỀN ĐẤT VIỆT!</div>
                                             </div>
                                         </div>
                                         <div class="mid-content">
-                                            <div class="mid-title">Khối nhà hàng</div>
+                                            <div class="mid-title">Tin tuyển dụng</div>
                                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                                                 <c:forEach var="postRestaurant" items="${postsRestaurant}">
                                                     <div class="panel panel-default">
@@ -35,24 +35,6 @@
                                                         <div id="collapse-${postRestaurant.getIdPost()}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                                             <div class="panel-body">
                                                                     ${postRestaurant.getContent()}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </c:forEach>
-                                            </div>
-                                            <div class="mid-title">Khối văn phòng</div>
-                                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                                <c:forEach var="postOffice" items="${postsOffice}">
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading" role="tab" id="headingOne">
-                                                            <h4 class="panel-title">
-                                                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-${postOffice.getIdPost()}" aria-expanded="false" aria-controls="collapseOne">
-                                                                    ${postOffice.getName()}</a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapse-${postOffice.getIdPost()}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                                                            <div class="panel-body">
-                                                                ${postOffice.getContent()}
                                                             </div>
                                                         </div>
                                                     </div>
