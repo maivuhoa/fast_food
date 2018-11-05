@@ -10,7 +10,10 @@
                 <a href="#"><i class="fa fa-edit"></i><span class="sidebar-text">Products</span><span class="fa arrow"></span></a>
                 <ul class="submenu collapse">
                     <li>
-                        <a href="blog_dashboard.html"><span class="sidebar-text">Dashboard<span class="label label-dark pull-right">Hot</span></span></a>
+                        <a href="/admin/products"><span class="sidebar-text">All Products</span></a>
+                    </li>
+                    <li>
+                        <a href="/admin/combo"><span class="sidebar-text">All Combo</span></a>
                     </li>
                 </ul>
             </li>
