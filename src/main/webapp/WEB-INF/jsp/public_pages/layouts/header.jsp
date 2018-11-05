@@ -12,31 +12,31 @@
                     <div class="row">
                         <div class="col-xs-5 userbox userbox-mobile">
                             <div class="logged-desktop">
-                                <a class="inline-block" tabindex="0" rel="popover-user">Võ Trung</a>
+                                <a class="inline-block" tabindex="0" rel="popover-user">${pageContext.request.userPrincipal.name}</a>
+                                <a class="inline-block" onclick="callLogin();">Đăng nhập</a>
                             </div>
                             <div class="logged-mobile" style="display: none">
                                 <div class="say-hi">
                                     <span>Xin chào!</span><br/>
-                                    <a href="https://kfcvietnam.com.vn/vn/thanh-vien/thong-tin-tai-khoan.html">
-                                        <h3>Võ Trung</h3>
+                                    <a href="/profile">
+                                        <h3>${pageContext.request.userPrincipal.name}</h3>
                                     </a>
                                     <span><img src="/public/public_pages/templates/images/gift-menu-mobile.png" class="img-responsive"/>0</span>
                                 </div>
                                 <ul class="hi-list">
-                                    <li><a href="https://kfcvietnam.com.vn/vn/thanh-vien/lich-su-giao-dich.html">Lịch sử giao dịch</a></li>
-                                    <li><a href="https://kfcvietnam.com.vn/vn/thanh-vien/mon-an-yeu-thich.html">Món ăn yêu thích</a></li>
-                                    <li><a href="https://kfcvietnam.com.vn/vn/thanh-vien/thong-bao.html">Thông báo</a></li>
-                                    <li><a href="https://kfcvietnam.com.vn/vn/thanh-vien/dang-xuat.html">Đăng xuất</a></li>
+                                    <li><a href="/profile/history">Lịch sử giao dịch</a></li>
+                                    <li><a href="/profile/favorite">Món ăn yêu thích</a></li>
+                                    <li><a href="/logout">Đăng xuất</a></li>
                                 </ul>
                             </div>
                             <div id="user-info" style="display:none;">
                                 <div class="list-group">
                                     <div class="list-group-item">
                                         <div class="avartar-user img-circle pull-left">
-                                            <img src="https://graph.facebook.com/2315560245430928/picture?type=large&width=100&height=100" class="img-responsive" alt=""/>
+                                            <img src="/public/public_pages/templates/images/avatar-nu.png" class="img-responsive" alt=""/>
                                         </div>
                                         <div class="username pull-left">
-                                            <div class="clearfix"><span>Võ Trung</span></div>
+                                            <div class="clearfix"><span>${pageContext.request.userPrincipal.name}</span></div>
                                             <div class="clearfix">
                                                 <h5>
                                                     <img src="https://kfcvietnam.com.vn/templates/images/gift-thanh-toan-md-mobile.png" alt="" class="img-responsive"/>0
@@ -44,13 +44,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="https://kfcvietnam.com.vn/vn/thanh-vien/thong-tin-tai-khoan.html" class="list-group-item">Thông tin tài khoản</a>
-                                    <a href="https://kfcvietnam.com.vn/vn/thanh-vien/dia-chi.html" class="list-group-item">Địa chỉ giao hàng</a>
-                                    <a href="https://kfcvietnam.com.vn/vn/thanh-vien/lich-su-giao-dich.html" class="list-group-item">Lịch sử giao dịch</a>
-                                    <a href="https://kfcvietnam.com.vn/vn/thanh-vien/mon-an-yeu-thich.html" class="list-group-item">Món ăn yêu thích</a>
-                                    <a href="https://kfcvietnam.com.vn/vn/thanh-vien/thong-bao.html" class="list-group-item">Thông báo<span class="badge">0</span></a>
-                                    <a href="https://kfcvietnam.com.vn/vn/thanh-vien/thu-vien-anh.html" class="list-group-item">Thư viện ảnh</a>
-                                    <a href="https://kfcvietnam.com.vn/vn/thanh-vien/dang-xuat.html" class="list-group-item">Đăng xuất</a>
+                                    <a href="/profile" class="list-group-item">Thông tin tài khoản</a>
+                                    <a href="/profile/address" class="list-group-item">Địa chỉ giao hàng</a>
+                                    <a href="/profile/history" class="list-group-item">Lịch sử giao dịch</a>
+                                    <a href="/profile/favorite" class="list-group-item">Món ăn yêu thích</a>
+                                    <a href="/logout" class="list-group-item">Đăng xuất</a>
                                 </div>
                             </div>
                         </div>

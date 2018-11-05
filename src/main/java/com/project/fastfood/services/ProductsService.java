@@ -32,4 +32,20 @@ public class ProductsService {
     public ProductsEntity demo(int id, boolean isCombo) {
         return productsRepository.findByIdProductAndTypeEquals(id, isCombo);
     }
+
+    public List<ProductsEntity> findProducts() {
+        return productsRepository.findProductsEntitiesByTypeEquals(false);
+    }
+
+    public List<ProductsEntity> findComboProducts() {
+        return productsRepository.findProductsEntitiesByTypeEquals(true);
+    }
+
+    public ProductsEntity findProductById(int id) {
+        return productsRepository.findProductsEntitiesByIdProduct(id);
+    }
+
+    public void deleteProduct(ProductsEntity product) {
+        productsRepository.delete(product);
+    }
 }

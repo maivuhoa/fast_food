@@ -43,7 +43,75 @@
 <script src="/public/public_pages/templates/js/script.js?v=1.2.5"></script>
 <script src="/public/public_pages/templates/js/init.js?v=1.2.5"></script>
 <script src="/public/public_pages/templates/js/nhahang.js?v=1.2.5"></script>
+<div id="popup-login" class="popup popup-login clearfix" style="display:none;">
+    <div class="popup-wap clearfix">
+        <a class="btn-close" onclick="$.fancybox.close();"></a>
+        <div class="three-vertical top clearfix"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="three-vertical bottom clearfix"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="container-fluid">
+            <div class="form-group text-center">
+                <div class="avatar-login inline-block"><img src="/public/public_pages/templates/images/avatar.png" class="avatar img-responsive"></div>
+                <div class="title-login inline-block">
+                    <div class="popup-head clearfix">Đăng nhập</div>
+                </div>
+            </div>
+            <form action="login" method="post" accept-charset="utf-8" id="frm_loginTop" autocomplete="off">
+                <div style="display:none">
+                    <input type="hidden" name="csrf_kfc_name" value="7eaa990dabe717e0974c9189bd8704e4" />
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group form-material floating">
+                            <input type="text" value="" name="email" id="emailLoginTop" class="form-control focus empty" placeholder="" />
+                            <label class="floating-label">Email</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <input type="password" value="" name="password" id="passLoginTop" class="form-control focus empty" placeholder="" />
+                            <label class="floating-label">Mật khẩu</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group form-group-lg">
+                            <div class="b-btn gm btn-block">
+                                <div class="input-group">
+                                    <input class="form-control btn btn-danger" type="submit" name="submitTop"value="Đăng nhập" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
 
+                <div class="col-xs-12">
+                    <div class="clearfix form-group text-center">
+                        <div class="lb-haveaccount"><span>Bạn chưa có tài khoản?</span></div>
+                    </div>
+                </div>
+                <div class="col-xs-8 col-xs-offset-2">
+                    <div class="form-group form-group-lg">
+                        <div class="b-btn gm btn-block center-block">
+                            <div class="input-group">
+                                <a href="/register" class="btn-dangky btn btn-danger form-control">Đăng ký ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function sendLoginTop(){
+            $('#submitTop').click();
+        }
+    </script>
+</div>
 <a class="scroll-top"></a>
 </body>
 </html>

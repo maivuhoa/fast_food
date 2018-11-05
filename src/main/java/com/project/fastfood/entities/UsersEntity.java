@@ -27,6 +27,45 @@ public class UsersEntity {
     private RolesEntity role;
     private List<WishListEntity> wishLists;
 
+    public UsersEntity(Integer idUser, String username, String password, String fullname, String address, String phone, String email, Integer status) {
+        this.idUser = idUser;
+        this.username = username;
+        this.password = password;
+        this.fullname = fullname;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.status = status;
+    }
+
+    public UsersEntity(Integer idUser, String username, String password, String fullname, String address, String phone, String email, Integer status, Integer deleteFlag, RolesEntity role) {
+        this.idUser = idUser;
+        this.username = username;
+        this.password = password;
+        this.fullname = fullname;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.status = status;
+        this.deleteFlag = deleteFlag;
+        this.role = role;
+    }
+
+    public UsersEntity() {
+    }
+
+    public UsersEntity(Integer idUser, String username, String password, String fullname, String address, String phone, String email, Integer status, Integer deleteFlag) {
+        this.idUser = idUser;
+        this.username = username;
+        this.password = password;
+        this.fullname = fullname;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.status = status;
+        this.deleteFlag = deleteFlag;
+    }
+
     @Id
     @Column(name = "id_user", nullable = false)
     public Integer getIdUser() {

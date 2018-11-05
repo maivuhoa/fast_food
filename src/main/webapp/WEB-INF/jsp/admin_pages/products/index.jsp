@@ -4,10 +4,10 @@
 <div id="main-content">
     <div class="m-b-20 clearfix">
         <div class="page-title pull-left">
-            <h3 class="pull-left"><strong>Manage Categories</strong></h3>
+            <h3 class="pull-left"><strong>Manage Products</strong></h3>
         </div>
         <div class="pull-right">
-            <a href="/admin/categories/new" class="btn btn-success m-t-10"><i class="fa fa-plus p-r-10"></i> Add a category</a>
+            <a href="/admin/products/new" class="btn btn-success m-t-10"><i class="fa fa-plus p-r-10"></i> Add a product</a>
         </div>
     </div>
     <div class="row">
@@ -32,22 +32,22 @@
                                 <thead>
                                     <tr>
                                         <th style="min-width:70px"><strong>ID</strong></th>
-                                        <th><strong>Category</strong></th>
+                                        <th><strong>Product</strong></th>
                                         <th><strong>Image</strong></th>
-                                        <th><strong>Date added</strong></th>
+                                        <th><strong>Category</strong></th>
                                         <th class="text-center"><strong>Actions</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach var="category" items="${categories}">
+                                <c:forEach var="product" items="${products}">
                                     <tr>
-                                        <td>${category.getIdCategory()}</td>
-                                        <td>${category.getName()}</td>
-                                        <td><img width="200" height="150" src="${pageContext.request.contextPath}/files/${category.getImage()}"></td>
-                                        <td>${category.getCreateAt()}</td>
+                                        <td>${product.getIdProduct()}</td>
+                                        <td>${product.getName()}</td>
+                                        <td><img width="200" height="150" src="${pageContext.request.contextPath}/files/${product.getImage()}"></td>
+                                        <td>${product.getCategory().getName()}</td>
                                         <td class="text-center ">
-                                            <a href="/admin/categories/${category.getIdCategory()}/edit" class="edit btn btn-sm btn-default"><i class="fa fa-pencil"></i> Edit</a>
-                                            <a href="/admin/categories/${category.getIdCategory()}/delete" onclick="return confirm('Bạn có muốn xóa?')" class="delete btn btn-sm btn-default"><i class="fa fa-times-circle"></i> Remove</a>
+                                            <a href="/admin/products/${product.getIdProduct()}/edit" class="edit btn btn-sm btn-default"><i class="fa fa-pencil"></i> Edit</a>
+                                            <a href="/admin/products/${product.getIdProduct()}/delete" onclick="return confirm('Bạn có muốn xóa?')" class="delete btn btn-sm btn-default"><i class="fa fa-times-circle"></i> Remove</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
