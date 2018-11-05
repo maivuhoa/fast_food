@@ -46,7 +46,6 @@ public class AdminProductController extends AdminSupperController {
 
     @GetMapping("/admin/products/new")
     public String newProduct(ModelMap modelMap) {
-        System.out.println(categoriesService.findAllCategories().size());
         modelMap.addAttribute("categories", categoriesService.findAllCategories());
         return "admin.products.new-product";
     }
@@ -79,6 +78,52 @@ public class AdminProductController extends AdminSupperController {
         }
         productsService.saveProduct(product);
         ra.addFlashAttribute("success", "Thêm Thành Công");
+        return "redirect:/admin/products";
+    }
+
+    @GetMapping("/admin/products/{id}/edit")
+    public String editProduct(@PathVariable("id") int id, ModelMap modelMap) {
+        modelMap.addAttribute("product", productsService.findProductById(id));
+        modelMap.addAttribute("categories", categoriesService.findAllCategories());
+        return "admin.products.edit-product";
+    }
+
+    @PostMapping("/admin/products/{id}/edit")
+    public String updateProduct(@PathVariable("id") int id, @ModelAttribute ProductsEntity product, @RequestParam("category") int categoryId,
+                                @RequestParam("img") MultipartFile img, ModelMap modelMap,
+                                RedirectAttributes ra, HttpServletRequest request) {
+        ProductsEntity productsEntity = productsService.findProductById(id);
+        CategoriesEntity category = categoriesService.findCategory(categoryId);
+        productsEntity.setCategory(category);
+        productsEntity.setName(product.getName());
+        productsEntity.setDescription(product.getDescription());
+        productsEntity.setPrice(product.getPrice());
+        if (!img.isEmpty()) {
+            try {
+                String dirFile = request.getServletContext().getRealPath("/files") + category.getImage();
+                File file = new File(dirFile);
+                if (file.exists()) {
+                    file.delete();
+                }
+                String filename = System.nanoTime() + img.getOriginalFilename();
+                productsEntity.setImage(filename);
+                String dirPath = request.getServletContext().getRealPath("/files");
+                Path path = Paths.get(dirPath + File.separator + filename);
+                File newFile = new File(dirPath);
+                if (!newFile .exists()) {
+                    newFile .mkdirs();
+                }
+                byte[] bytes = img.getBytes();
+                Files.write(path, bytes);
+            } catch (Exception e) {
+                modelMap.addAttribute("product", product);
+                modelMap.addAttribute("categories", categoriesService.findAllCategories());
+                modelMap.addAttribute("error", "Có lỗi xẩy ra");
+                return "admin.products.edit-product";
+            }
+        }
+        productsService.saveProduct(productsEntity);
+        ra.addFlashAttribute("success", "Cập Nhật Thành Công");
         return "redirect:/admin/products";
     }
 }

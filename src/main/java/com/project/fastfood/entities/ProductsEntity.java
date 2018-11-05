@@ -146,7 +146,7 @@ public class ProductsEntity {
         this.deleteFlag = deleteFlag;
     }
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     public List<OrderDetailEntity> getOrderDetails() {
         return orderDetails;
     }

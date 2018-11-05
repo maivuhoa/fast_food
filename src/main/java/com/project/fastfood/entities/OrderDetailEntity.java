@@ -113,7 +113,6 @@ public class OrderDetailEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", referencedColumnName = "id_product")
-    @OnDelete(action = OnDeleteAction.CASCADE)
     public ProductsEntity getProduct() {
         return product;
     }

@@ -150,8 +150,8 @@
     <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/products/level_scripts.jsp" />
   </definition>
 
-  <definition name="admin.products.edit" extends="admin.template">
-    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/products/edit.jsp" />
+  <definition name="admin.products.edit-product" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/products/edit_product.jsp" />
     <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/products/level_style.jsp" />
     <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/products/level_scripts.jsp" />
   </definition>
