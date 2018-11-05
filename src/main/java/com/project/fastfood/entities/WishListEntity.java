@@ -1,5 +1,8 @@
 package com.project.fastfood.entities;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -77,6 +80,7 @@ public class WishListEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", referencedColumnName = "id_product")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     public ProductsEntity getProduct() {
         return product;
     }
