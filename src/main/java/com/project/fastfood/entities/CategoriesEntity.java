@@ -1,10 +1,12 @@
 package com.project.fastfood.entities;
 
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
@@ -84,7 +86,7 @@ public class CategoriesEntity {
         this.deleteFlag = deleteFlag;
     }
 
-    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
     public List<ProductsEntity> getProducts() {
         return products;
     }

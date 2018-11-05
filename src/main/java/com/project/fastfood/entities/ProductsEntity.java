@@ -2,6 +2,8 @@ package com.project.fastfood.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -140,7 +142,7 @@ public class ProductsEntity {
         this.deleteFlag = deleteFlag;
     }
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
     public List<OrderDetailEntity> getOrderDetails() {
         return orderDetails;
     }
@@ -152,6 +154,7 @@ public class ProductsEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     @JoinColumn(name = "category_id", referencedColumnName = "id_category")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     public CategoriesEntity getCategory() {
         return category;
     }
