@@ -28,6 +28,7 @@ public class PublicSuperControler {
     @Autowired
     OrdersService ordersService;
     @Autowired
+    OrderDetailService orderDetailService;
     UsersService usersService;
     @Autowired
     RolesService rolesService;
