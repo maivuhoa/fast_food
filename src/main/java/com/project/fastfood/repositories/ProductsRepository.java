@@ -16,4 +16,6 @@ public interface ProductsRepository extends JpaRepository<ProductsEntity, Intege
     ProductsEntity findByIdProductAndTypeEquals(int id, boolean isCombo);
 
     List<ProductsEntity> findProductsEntitiesByTypeEquals(boolean isCombo);
+
+    ProductsEntity findProductsEntitiesByIdProduct(int id);
 }
