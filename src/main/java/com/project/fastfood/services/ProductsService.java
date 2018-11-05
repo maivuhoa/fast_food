@@ -48,4 +48,8 @@ public class ProductsService {
     public void deleteProduct(ProductsEntity product) {
         productsRepository.delete(product);
     }
+
+    public void saveProduct(ProductsEntity product) {
+        productsRepository.save(product);
+    }
 }

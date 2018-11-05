@@ -13,9 +13,9 @@
             <a id="menu-medium" class="sidebar-toggle tooltips">
                 <i class="fa fa-outdent"></i>
             </a>
-            <a class="navbar-brand" href="index.html"></a>
+            <a class="navbar-brand" href=""></a>
         </div>
-        <div class="navbar-center">Invoice n°12658757</div>
+        <div class="navbar-center">Admin Management</div>
         <div class="navbar-collapse collapse">
             <!-- BEGIN TOP NAVIGATION MENU -->
             <ul class="nav navbar-nav pull-right header-menu">

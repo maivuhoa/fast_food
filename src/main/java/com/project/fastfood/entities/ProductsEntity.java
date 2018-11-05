@@ -2,8 +2,10 @@ package com.project.fastfood.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -104,6 +106,7 @@ public class ProductsEntity {
 
     @Basic
     @Column(name = "create_at", nullable = true)
+    @CreationTimestamp
     public Timestamp getCreateAt() {
         return createAt;
     }
@@ -114,6 +117,7 @@ public class ProductsEntity {
 
     @Basic
     @Column(name = "update_at", nullable = true)
+    @UpdateTimestamp
     public Timestamp getUpdateAt() {
         return updateAt;
     }
