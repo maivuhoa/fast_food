@@ -4,7 +4,7 @@
 <div id="main-content">
     <div class="page-title">
         <i class="icon-custom-left"></i>
-        <h3><strong>Create Category</strong></h3>
+        <h3><strong>Update Category</strong></h3>
         <br>
     </div>
     <div class="row">
@@ -23,7 +23,7 @@
                                         <strong>Error!</strong> ${error}.
                                     </div>
                                 </c:if>
-                                <form id="new-category" action="/admin/categories/new" enctype="multipart/form-data" method="POST" class="form-horizontal">
+                                <form id="new-category" action="/admin/categories/${category.getIdCategory()}/edit" enctype="multipart/form-data" method="POST" class="form-horizontal">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Category Name <span class="asterisk">*</span>
                                         </label>
@@ -32,10 +32,10 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Image <span class="asterisk">*</span>
+                                        <label class="col-sm-2 control-label">Image
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="file" class="form-control" name="img" required>
+                                            <input type="file" class="form-control" name="img">
                                         </div>
                                     </div>
                                     <input type="submit" id="submit" style="display: none">
@@ -49,7 +49,8 @@
     </div>
     <div class="row">
         <div class="col-md-12 m-t-20 m-b-40 align-center">
-            <a href="javascript:void(0)" onclick="submitForm($('#new-category'))" class="btn btn-success m-t-10"><i class="fa fa-check"></i> Create Category</a>
+            <a href="/admin/categories/${category.getIdCategory()}/delete" class="btn btn-danger m-r-10 m-t-10"><i class="fa fa-times"></i> Delete Category</a>
+            <a href="javascript:void(0)" onclick="submitForm($('#new-category'))" class="btn btn-success m-t-10"><i class="fa fa-check"></i> Save changes</a>
         </div>
     </div>
 

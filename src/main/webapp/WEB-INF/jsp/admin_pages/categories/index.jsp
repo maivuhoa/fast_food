@@ -47,7 +47,7 @@
                                         <td>${category.getCreateAt()}</td>
                                         <td class="text-center ">
                                             <a href="/admin/categories/${category.getIdCategory()}/edit" class="edit btn btn-sm btn-default"><i class="fa fa-pencil"></i> Edit</a>
-                                            <a href="/admin/categories/${category.getIdCategory()}" class="delete btn btn-sm btn-default"><i class="fa fa-times-circle"></i> Remove</a>
+                                            <a href="/admin/categories/${category.getIdCategory()}/delete" onclick="return confirm('Bạn có muốn xóa?')" class="delete btn btn-sm btn-default"><i class="fa fa-times-circle"></i> Remove</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
