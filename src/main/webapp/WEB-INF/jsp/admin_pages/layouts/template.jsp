@@ -10,7 +10,7 @@
 <head>
     <!-- BEGIN META SECTION -->
     <meta charset="utf-8">
-    <title>Pixit - Responsive Boostrap3 Admin</title>
+    <title>VINACHIEN || ADMIN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="" name="description" />
     <meta content="themes-lab" name="author" />
@@ -21,6 +21,8 @@
     <link href="/public/admin_pages/css/bootstrap.min.css" rel="stylesheet">
     <link href="/public/admin_pages/css/plugins.css" rel="stylesheet">
     <link href="/public/admin_pages/css/style.min.css" rel="stylesheet">
+    <link href="/public/admin_pages/plugins/datatables/dataTables.css" rel="stylesheet">
+    <link href="/public/admin_pages/plugins/datatables/dataTables.tableTools.css" rel="stylesheet">
     <link href="#" rel="stylesheet" id="theme-color">
     <!-- END  MANDATORY STYLE -->
     <!-- BEGIN PAGE LEVEL STYLE -->
@@ -67,5 +69,10 @@
 <!-- END PAGE LEVEL SCRIPTS -->
 <script src="/public/admin_pages/js/application.js"></script>
 <script src="/public/admin_pages/js/custom.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.table').DataTable();
+    })
+</script>
 </body>
 </html>

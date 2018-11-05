@@ -1,14 +1,18 @@
 package com.project.fastfood.controllers;
 
+import com.project.fastfood.entities.CategoriesEntity;
 import com.project.fastfood.entities.ProductsEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Controller
 public class AdminProductController extends AdminSupperController {
@@ -37,6 +41,44 @@ public class AdminProductController extends AdminSupperController {
         if (product.getType()) {
             return "redirect:/admin/combo";
         }
+        return "redirect:/admin/products";
+    }
+
+    @GetMapping("/admin/products/new")
+    public String newProduct(ModelMap modelMap) {
+        System.out.println(categoriesService.findAllCategories().size());
+        modelMap.addAttribute("categories", categoriesService.findAllCategories());
+        return "admin.products.new-product";
+    }
+
+    @PostMapping("/admin/products/new")
+    public String createProduct(@ModelAttribute ProductsEntity product, @RequestParam("category") int categoryId,
+                                @RequestParam("img") MultipartFile img, ModelMap modelMap,
+                                RedirectAttributes ra, HttpServletRequest request) {
+        CategoriesEntity category = categoriesService.findCategory(categoryId);
+        product.setCategory(category);
+        product.setType(false);
+        String filename = System.nanoTime() + img.getOriginalFilename();
+        product.setImage(filename);
+        try {
+            if (!img.isEmpty()) {
+                String dirPath = request.getServletContext().getRealPath("/files");
+                Path path = Paths.get(dirPath + File.separator + filename);
+                File file = new File(dirPath);
+                if (!file.exists()) {
+                    file.mkdirs();
+                }
+                byte[] bytes = img.getBytes();
+                Files.write(path, bytes);
+            }
+        } catch (Exception e) {
+            modelMap.addAttribute("product", product);
+            modelMap.addAttribute("categories", categoriesService.findAllCategories());
+            modelMap.addAttribute("error", "Có lỗi xẩy ra");
+            return "admin.products.new-product";
+        }
+        productsService.saveProduct(product);
+        ra.addFlashAttribute("success", "Thêm Thành Công");
         return "redirect:/admin/products";
     }
 }

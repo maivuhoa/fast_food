@@ -20,6 +20,10 @@
             <li>
                 <a href="/admin/categories"><i class="glyph-icon flaticon-frontend"></i><span class="sidebar-text">Categories</span></a>
             </li>
+            <li>
+                <a href="/admin/orders"><i class="glyph-icon flaticon-pages"></i><span class="sidebar-text">Orders</span></a>
+            </li>
+
         </ul>
     </div>
 </nav>

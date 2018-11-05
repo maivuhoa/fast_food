@@ -15,7 +15,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+                        <div class="col-md-12 col-sm-12 col-xs-12 table-responsive table-red filter-right">
                             <c:if test="${success != null}">
                                 <div class="alert alert-success" style="width:100%; margin-top:18px;">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
