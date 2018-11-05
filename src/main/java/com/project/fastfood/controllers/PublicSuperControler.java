@@ -27,6 +27,8 @@ public class PublicSuperControler {
     WardsServices wardsServices;
     @Autowired
     OrdersService ordersService;
+    @Autowired
+    OrderDetailService orderDetailService;
 
     @ModelAttribute
     protected void responseListCategoriesToHomePage(ModelMap modelMap) {

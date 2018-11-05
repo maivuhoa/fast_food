@@ -68,4 +68,15 @@ public class OrdersService {
         orderDetailService.saveOrderDetail(list);
 
     }
+    
+    public List<OrdersEntity> findAll(){
+    	List<OrdersEntity> orders = ordersRepository.findAll();
+    	if (!orders.isEmpty()) {
+			for (int i = 0; i < orders.size(); i++) {
+				orders.get(i).setOrderDetails(orderDetailService.findAllOrderDetailByOrder(orders.get(i).getIdOrder()));
+			}
+		}
+
+    	return orders;
+    }
 }

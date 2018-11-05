@@ -17,4 +17,8 @@ public class OrderDetailService {
             orderDetailRepository.save(o);
         }
     }
+    
+    public List<OrderDetailEntity> findAllOrderDetailByOrder(int orderId){
+    	return orderDetailRepository.findByOrder_IdOrder(orderId);
+    }
 }
