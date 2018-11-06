@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+  <!-- public -->
+  <definition name="public.template" template="/WEB-INF/jsp/public_pages/layouts/template.jsp">
+    <put-attribute name="header" value="/WEB-INF/jsp/public_pages/layouts/header.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/jsp/public_pages/layouts/footer.jsp" />
+    <put-attribute name="content" value="" />
+    <put-attribute name="meta_description" value="" />
+  </definition>
+  
+  <definition name="public.category.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/categories/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/categories/meta_description.jsp" />
+  </definition>
+
+  <definition name="public.payment.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/payment/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/payment/meta_description.jsp" />
+  </definition>
+
+  <definition name="public.about.demo" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/about/demo.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/about/meta_description.jsp" />
+  </definition>
+
+  <definition name="public.checkout.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/checkout/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/checkout/meta_description.jsp" />
+  </definition>
+  <definition name="public.orders.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/orders/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/orders/meta_description.jsp" />
+  </definition>
+
+  <definition name="public.cart.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/carts/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/carts/meta_description.jsp" />
+  </definition>
+  <definition name="public.profile.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/profile/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/profile/meta_description.jsp" />
+  </definition>
+  <definition name="public.discount.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/discount/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/discount/meta_description.jsp" />
+  </definition>
+  <definition name="public.discount.detail" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/discount/detail.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/discount/meta_description.jsp" />
+  </definition>
+  <definition name="public.wish_list.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/wish_list/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/wish_list/meta_description.jsp" />
+  </definition>
+  <definition name="public.about.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/about/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/about/meta_description.jsp" />
+  </definition>
+  <definition name="public.register.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/register/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/register/meta_description.jsp" />
+  </definition>
+  <definition name="public.ship_address.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/ship_address/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/ship_address/meta_description.jsp" />
+  </definition>
+  <definition name="public.recruitment.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/recruitment/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/recruitment/meta_description.jsp" />
+  </definition>
+  <definition name="public.login.index" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/login/index.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/login/meta_description.jsp" />
+  </definition>
+  <definition name="public.profile.address" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/profile/address.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/profile/meta_description.jsp" />
+  </definition>
+  <definition name="public.profile.history" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/profile/history.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/profile/meta_description.jsp" />
+  </definition>
+  <definition name="public.profile.favorite" extends="public.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/public_pages/profile/favorite.jsp" />
+    <put-attribute name="meta_description" value="/WEB-INF/jsp/public_pages/profile/meta_description.jsp" />
+  </definition>
+
+  <!-- admin -->
+  <definition name="admin.template" template="/WEB-INF/jsp/admin_pages/layouts/template.jsp">
+    <put-attribute name="header" value="/WEB-INF/jsp/admin_pages/layouts/header.jsp" />
+    <put-attribute name="left_bar" value="/WEB-INF/jsp/admin_pages/layouts/left_bar.jsp" />
+    <put-attribute name="level_style" value="" />
+    <put-attribute name="level_scripts" value="" />
+    <put-attribute name="content" value="" />
+  </definition>
+
+  <definition name="admin.category.index" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/categories/index.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/categories/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/categories/level_scripts.jsp" />
+  </definition>
+
+  <definition name="admin.category.new" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/categories/new.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/categories/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/categories/level_scripts.jsp" />
+  </definition>
+
+  <definition name="admin.category.edit" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/categories/edit.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/categories/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/categories/level_scripts.jsp" />
+  </definition>
+
+  <definition name="admin.invoice.index" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/invoice/index.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/invoice/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/invoice/level_scripts.jsp" />
+  </definition>
+  <definition name="admin.orders.index" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/orders/index.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/orders/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/orders/level_scripts.jsp" />
+  </definition>
+  <definition name="admin.order_detail.index" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/order_detail/index.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/order_detail/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/order_detail/level_scripts.jsp" />
+  </definition>
+
+  <definition name="admin.products.index" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/products/index.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/products/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/products/level_scripts.jsp" />
+  </definition>
+
+  <definition name="admin.products.combo" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/products/combo.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/products/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/products/level_scripts.jsp" />
+  </definition>
+
+  <definition name="admin.products.new-product" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/products/new_product.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/products/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/products/level_scripts.jsp" />
+  </definition>
+
+  <definition name="admin.products.edit-product" extends="admin.template">
+    <put-attribute name="content" value="/WEB-INF/jsp/admin_pages/products/edit_product.jsp" />
+    <put-attribute name="level_style" value="/WEB-INF/jsp/admin_pages/products/level_style.jsp" />
+    <put-attribute name="level_scripts" value="/WEB-INF/jsp/admin_pages/products/level_scripts.jsp" />
+  </definition>
+</tiles-definitions>
