@@ -32,7 +32,6 @@ public class OrdersService {
             String orgins = shopService.findShop().getAddress();
             String url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + orgins + "&destinations=" + destinations + "&key=AIzaSyCGU0PK5ks0K4jqqAZ6l2A6FKWUknklPkM";
             url = url.replaceAll(" ", "+");
-            System.out.println(url);
             URL obj = new URL(url);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
             con.setRequestMethod("GET");

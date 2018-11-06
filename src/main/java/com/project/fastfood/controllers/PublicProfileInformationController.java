@@ -23,6 +23,7 @@ public class PublicProfileInformationController extends PublicSuperControler{
 
     public void responseProfileIndex(ModelMap modelMap) {
         String email = getPrincipal();
+        System.out.println("userservice" + usersService);
         UsersEntity usersEntity = usersService.findUserByEmail(email);
         modelMap.addAttribute("usersEntity", usersEntity);
     }

@@ -31,6 +31,7 @@ public class PublicSuperControler {
     OrdersService ordersService;
     @Autowired
     OrderDetailService orderDetailService;
+    @Autowired
     UsersService usersService;
     @Autowired
     RolesService rolesService;

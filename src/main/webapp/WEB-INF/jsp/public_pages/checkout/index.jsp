@@ -270,7 +270,7 @@
                                                                 </div>
                                                             </div>
                                                             <input type="hidden" name="returnurl"
-                                                                   value="https://kfcvietnam.com.vn/vn/thong-tin-dat-hang.html"/>
+                                                                   value=""/>
                                                         </form>
                                                     </div>
                                                 </div>
