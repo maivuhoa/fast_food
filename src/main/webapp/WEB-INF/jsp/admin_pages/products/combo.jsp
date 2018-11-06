@@ -43,7 +43,7 @@
                                     <tr>
                                         <td>${combo.getIdProduct()}</td>
                                         <td>${combo.getName()}</td>
-                                        <td><img width="200" height="150" src="${pageContext.request.contextPath}/files/${combo.getImage()}"></td>
+                                        <td><img width="200" height="150" src="${pageContext.request.contextPath}/public/public_pages/uploads/images/${combo.getImage()}"></td>
                                         <td>${combo.getCategory().getName()}</td>
                                         <td class="text-center ">
                                             <a href="/admin/combo/${combo.getIdProduct()}/edit" class="edit btn btn-sm btn-default"><i class="fa fa-pencil"></i> Edit</a>

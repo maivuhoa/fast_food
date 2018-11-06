@@ -4,7 +4,7 @@
     <div id="main-menu">
         <ul class="sidebar-nav">
             <li>
-                <a href="index.html"><i class="fa fa-dashboard"></i><span class="sidebar-text">Dashboard</span></a>
+                <a href="/admin/categories"><i class="fa fa-dashboard"></i><span class="sidebar-text">Dashboard</span></a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-edit"></i><span class="sidebar-text">Products</span><span class="fa arrow"></span></a>

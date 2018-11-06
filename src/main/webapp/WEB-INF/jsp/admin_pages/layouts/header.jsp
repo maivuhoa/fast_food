@@ -13,7 +13,7 @@
             <a id="menu-medium" class="sidebar-toggle tooltips">
                 <i class="fa fa-outdent"></i>
             </a>
-            <a class="navbar-brand" href=""></a>
+            <a href=""><img src="/public/public_pages/templates/images/logo-2.png" width="70px" height="46px"></a>
         </div>
         <div class="navbar-center">Admin Management</div>
         <div class="navbar-collapse collapse">
@@ -23,7 +23,7 @@
                 <li class="dropdown" id="user-header">
                     <a href="#" class="dropdown-toggle c-white" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                         <img src="/public/admin_pages/img/avatars/avatar2.png" alt="user avatar" width="30" class="p-r-5">
-                        <span class="username">Bob Nilson</span>
+                        <span class="username">Toàn Nguyễn</span>
                         <i class="fa fa-angle-down p-r-10"></i>
                     </a>
                     <ul class="dropdown-menu">

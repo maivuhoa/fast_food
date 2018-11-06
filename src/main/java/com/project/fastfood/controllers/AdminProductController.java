@@ -31,7 +31,7 @@ public class AdminProductController extends AdminSupperController {
     @GetMapping("/admin/products/{id}/delete")
     public String deleteProduct(@PathVariable("id") int id, RedirectAttributes ra, HttpServletRequest request) {
         ProductsEntity product = productsService.findProductById(id);
-        String dirFile = request.getServletContext().getRealPath("/files") + product.getImage();
+        String dirFile = request.getServletContext().getRealPath("/public/public_pages/uploads/images") + File.separator + product.getImage();
         File file = new File(dirFile);
         if (file.exists()) {
             file.delete();
@@ -61,7 +61,7 @@ public class AdminProductController extends AdminSupperController {
         product.setImage(filename);
         try {
             if (!img.isEmpty()) {
-                String dirPath = request.getServletContext().getRealPath("/files");
+                String dirPath = request.getServletContext().getRealPath("/public/public_pages/uploads/images");
                 Path path = Paths.get(dirPath + File.separator + filename);
                 File file = new File(dirPath);
                 if (!file.exists()) {
@@ -100,7 +100,7 @@ public class AdminProductController extends AdminSupperController {
         productsEntity.setPrice(product.getPrice());
         if (!img.isEmpty()) {
             try {
-                String dirFile = request.getServletContext().getRealPath("/files") + category.getImage();
+                String dirFile = request.getServletContext().getRealPath("/public/public_pages/uploads/images") + File.separator + productsEntity.getImage();
                 File file = new File(dirFile);
                 if (file.exists()) {
                     file.delete();

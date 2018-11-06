@@ -43,7 +43,7 @@
                                     <tr>
                                         <td>${product.getIdProduct()}</td>
                                         <td>${product.getName()}</td>
-                                        <td><img width="200" height="150" src="${pageContext.request.contextPath}/files/${product.getImage()}"></td>
+                                        <td><img width="200" height="150" src="${pageContext.request.contextPath}/public/public_pages/uploads/images/${product.getImage()}"></td>
                                         <td>${product.getCategory().getName()}</td>
                                         <td class="text-center ">
                                             <a href="/admin/products/${product.getIdProduct()}/edit" class="edit btn btn-sm btn-default"><i class="fa fa-pencil"></i> Edit</a>

@@ -43,7 +43,7 @@
                                     <tr>
                                         <td>${category.getIdCategory()}</td>
                                         <td>${category.getName()}</td>
-                                        <td><img width="200" height="150" src="${pageContext.request.contextPath}/files/${category.getImage()}"></td>
+                                        <td><img width="200" height="150" src="${pageContext.request.contextPath}/public/public_pages/uploads/images/${category.getImage()}"></td>
                                         <td>${category.getCreateAt()}</td>
                                         <td class="text-center ">
                                             <a href="/admin/categories/${category.getIdCategory()}/edit" class="edit btn btn-sm btn-default"><i class="fa fa-pencil"></i> Edit</a>

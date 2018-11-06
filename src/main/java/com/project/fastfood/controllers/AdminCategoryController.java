@@ -35,7 +35,7 @@ public class AdminCategoryController extends AdminSupperController{
         category.setImage(filename);
         try {
             if (!img.isEmpty()) {
-                String dirPath = request.getServletContext().getRealPath("/files");
+                String dirPath = request.getServletContext().getRealPath("/public/public_pages/uploads/images");
                 Path path = Paths.get(dirPath + File.separator + filename);
                 File file = new File(dirPath);
                 if (!file.exists()) {
@@ -57,7 +57,7 @@ public class AdminCategoryController extends AdminSupperController{
     @GetMapping("/admin/categories/{id}/delete")
     public String deleteCategory(@PathVariable("id") int id, RedirectAttributes ra, HttpServletRequest request) {
         CategoriesEntity category = categoriesService.findCategory(id);
-        String dirFile = request.getServletContext().getRealPath("/files") + category.getImage();
+        String dirFile = request.getServletContext().getRealPath("/public/public_pages/uploads/images") + File.separator + category.getImage();
         File file = new File(dirFile);
         if (file.exists()) {
             file.delete();
@@ -80,14 +80,14 @@ public class AdminCategoryController extends AdminSupperController{
         CategoriesEntity category = categoriesService.findCategory(id);
         if (!img.isEmpty()) {
             try {
-                String dirFile = request.getServletContext().getRealPath("/files") + category.getImage();
+                String dirFile = request.getServletContext().getRealPath("/public/public_pages/uploads/images") + category.getImage();
                 File file = new File(dirFile);
                 if (file.exists()) {
                     file.delete();
                 }
                 String filename = System.nanoTime() + img.getOriginalFilename();
                 category.setImage(filename);
-                String dirPath = request.getServletContext().getRealPath("/files");
+                String dirPath = request.getServletContext().getRealPath("/public/public_pages/uploads/images");
                 Path path = Paths.get(dirPath + File.separator + filename);
                 File newFile = new File(dirPath);
                 if (!newFile .exists()) {
